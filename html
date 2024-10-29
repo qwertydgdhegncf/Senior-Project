@@ -36,6 +36,8 @@
         </div>
     </section>
 
+    
+
     <!-- About Section -->
     <section id="about" class="about-section">
         <div class="about-container">
@@ -441,7 +443,125 @@
         </div>
     </div>
 </section>
-    <!-- Chatbot Section -->
+
+<section id="advisory" class="advisory-section">
+    <div class="advisory-container">
+        <h2>Daily Health Recommendations</h2>
+        <p>Enter your age to see personalized health goals for staying healthy:</p>
+        
+        <label for="age-input">Enter your age:</label>
+        <input type="number" id="age-input" min="1" max="120" placeholder="Your age" required>
+        
+        <button type="button" id="get-advice">Get Recommendations</button>
+
+        <div id="recommendations" class="recommendations">
+            <!-- Personalized recommendations will appear here -->
+        </div>
+    </div>
+</section>
+
+
+
+<section id="health-tracker" class="health-tracker-section">
+    <div class="health-tracker-container">
+        <h2>Interactive Health Tracker</h2>
+        <p>Log your daily health metrics to track your wellness over time.</p>
+        
+        <!-- Form to enter daily health metrics -->
+        <form id="health-tracker-form">
+            <label for="sleep-hours">Sleep Hours:</label>
+            <input type="number" id="sleep-hours" placeholder="Enter hours slept" min="0" step="0.5" required>
+            
+            <label for="steps-walked">Steps Walked:</label>
+            <input type="number" id="steps-walked" placeholder="Enter steps" min="0" required>
+            
+            <label for="water-intake">Water Intake (liters):</label>
+            <input type="number" id="water-intake" placeholder="Enter liters of water" min="0" step="0.1" required>
+            
+            <button type="button" id="add-entry">Add Entry</button>
+        </form>
+
+        <!-- Table to display health metrics -->
+        <table id="health-log" class="health-log">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Sleep Hours</th>
+                    <th>Steps Walked</th>
+                    <th>Water Intake (liters)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Entries will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="consultation" class="consultation-section">
+    <div class="consultation-container">
+        <h2>Book a Virtual Consultation</h2>
+        <p>Schedule an online consultation with one of our experienced doctors.</p>
+        
+        <form id="booking-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email address" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" required>
+            
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" required>
+            
+            <label for="doctor">Select Doctor:</label>
+            <select id="doctor" required>
+                <option value="dr-siddharth">Dr. Siddharth</option>
+                <option value="dr-priya">Dr. Priya Nahal</option>
+                <option value="dr-bolormaa">Dr. Bolormaa</option>
+            </select>
+            
+            <button type="submit">Book Consultation</button>
+        </form>
+
+        <div id="confirmation-message" class="confirmation-message" style="display: none;">
+            <p>Your consultation has been booked successfully! You will receive a confirmation email soon.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.getElementById("booking-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        // Show congrats message
+        const congratsMessage = document.createElement("p");
+        congratsMessage.textContent = "🎉 Congrats! Your appointment is being booked.";
+        congratsMessage.style.color = "#00bfff"; // Light blue text color
+        congratsMessage.style.fontWeight = "bold";
+        congratsMessage.style.marginTop = "10px";
+        congratsMessage.style.fontSize = "1.2em";
+        
+        // Append the congrats message above the confirmation message
+        const confirmationDiv = document.getElementById("confirmation-message");
+        confirmationDiv.insertBefore(congratsMessage, confirmationDiv.firstChild);
+        
+        // Show confirmation message
+        confirmationDiv.style.display = "block";
+        
+        // Clear form fields
+        document.getElementById("booking-form").reset();
+        
+        // Optionally, scroll to the confirmation message
+        confirmationDiv.scrollIntoView({ behavior: "smooth" });
+    });
+</script>
+ <!-- Chatbot Section -->
     <div id="chatbot" class="chatbot">
         <div class="chatbot-header">
             🤖 Diagnocare Bot
