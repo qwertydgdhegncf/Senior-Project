@@ -158,3 +158,63 @@ footer {
         height: 60%;
     }
 }
+
+.about-section {
+    padding: 60px 20px;
+    background-image: url('https://images.unsplash.com/photo-1603398938378-68fe5a82b4c9'); /* Stethoscope and hospital background */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+}
+
+.about-container {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.about-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.about-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.doctor-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.doctor-card {
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.doctor-card img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+.doctor-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+.doctor-card p {
+    font-size: 1em;
+    line-height: 1.5;
+}
