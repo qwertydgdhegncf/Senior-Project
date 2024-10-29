@@ -896,3 +896,441 @@ textarea {
     color: #ffffff;
     text-align: left;
 }
+
+/* Health Tracker Section */
+.health-tracker-section {
+    padding: 60px 20px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    text-align: center;
+}
+
+.health-tracker-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #333333;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.health-tracker-container h2 {
+    color: #00bfff;
+    margin-bottom: 20px;
+}
+
+#health-tracker-form label {
+    display: block;
+    margin-top: 10px;
+    color: #00bfff;
+}
+
+#health-tracker-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #00bfff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#health-tracker-form button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    font-weight: bold;
+}
+
+#health-tracker-form button:hover {
+    background-color: #0056b3;
+}
+
+.health-log {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.health-log th,
+.health-log td {
+    padding: 10px;
+    border: 1px solid #00bfff;
+    text-align: center;
+}
+
+.health-log th {
+    background-color: #2a2a2a;
+    color: #00bfff;
+}
+
+.health-log td {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.advisory-section {
+    padding: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.advisory-container label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #00bfff;
+}
+
+#advisory-section input {
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #2a2a2a;
+    border: 1px solid #00bfff;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#recommendations {
+    margin-top: 20px;
+    background-color: #444;
+    padding: 15px;
+    border-radius: 8px;
+    color: #00bfff;
+}
+
+/* Tab section styling */
+.tab-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.tab-button.active {
+    background-color: #0056b3;
+}
+
+.tab-button:hover {
+    background-color: #0056b3;
+}
+
+.tab-content {
+    display: none;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Consultation Section Styling */
+.consultation-section {
+    padding: 60px 20px;
+    background-color: #1e1e1e; /* Dark background for the consultation section */
+    color: #ffffff; /* White text */
+    text-align: center;
+}
+
+.consultation-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #333333; /* Slightly lighter dark container */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.consultation-section h2 {
+    font-size: 2em;
+    color: #00bfff; /* Light blue heading */
+    margin-bottom: 10px;
+}
+
+.consultation-section p {
+    color: #cccccc; /* Light grey text for description */
+    margin-bottom: 20px;
+}
+
+/* Form input styling */
+#booking-form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #00bfff; /* Light blue labels */
+}
+
+#booking-form input,
+#booking-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff; /* White text for inputs */
+    background-color: #2a2a2a; /* Dark input background */
+    border-radius: 4px;
+    border: 1px solid #00bfff; /* Light blue border */
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+#booking-form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    width: 100%; /* Full width button */
+    margin-top: 10px;
+}
+
+#booking-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Confirmation message styling */
+.confirmation-message {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #00bfff; /* Light blue background for success message */
+    color: #1e1e1e; /* Dark text for readability */
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Dark Mode for User Authentication and Dashboard */
+body {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+    font-family: 'Roboto', sans-serif;
+}
+
+#auth-section, #dashboard {
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+    background-color: #1e1e1e; /* Dark card background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+h2, h3 {
+    color: #00bfff; /* Light blue for headings */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #333333; /* Darker border */
+    background-color: #333333; /* Darker input background */
+    color: #ffffff; /* Light text color */
+    border-radius: 4px;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #bbbbbb; /* Light gray placeholder text */
+}
+
+button {
+    background-color: #007BFF; /* Dark blue button */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Lighter blue on hover */
+}
+
+/* Styling for history and recommendations sections */
+.dashboard-content {
+    padding-top: 10px;
+}
+
+#history, #recommendations {
+    background-color: #2a2a2a; /* Slightly lighter dark background */
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+p {
+    color: #cccccc; /* Light gray for paragraph text */
+}
+
+a {
+    color: #00bfff; /* Light blue links */
+}
+
+a:hover {
+    color: #1e90ff; /* Lighter blue on hover */
+}
+
+/* Toggle switch styling */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007BFF;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Daily Health Recommendations Section */
+.daily-recommendations-section {
+    padding: 40px 20px; /* Adjust padding to make it more compact */
+    background-color: #333; /* Keep dark background for consistency */
+    text-align: center;
+    color: #00bfff; /* Blue color for title and text */
+}
+
+.daily-recommendations-container {
+    max-width: 600px; /* Reduce width to make it compact */
+    margin: 0 auto;
+    background-color: #444; /* Slightly lighter dark for the container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.daily-recommendations-section h2 {
+    font-size: 1.8em; /* Adjust title size */
+    margin-bottom: 10px;
+}
+
+.daily-recommendations-section p {
+    font-size: 1em; /* Adjust subtitle text size */
+    color: #cccccc; /* Lighter color for readability */
+    margin-bottom: 20px;
+}
+
+#age-input {
+    width: 60%; /* Narrower input field */
+    padding: 8px;
+    font-size: 0.9em;
+    border-radius: 4px;
+    border: 1px solid #00bfff;
+    background-color: #222; /* Dark background for input */
+    color: #ffffff;
+}
+
+#get-recommendations {
+    padding: 8px 15px;
+    font-size: 0.9em; /* Smaller button text */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#get-recommendations:hover {
+    background-color: #0056b3; /* Hover effect */
+}
+
+/* Recommendation output styling */
+#recommendation-output {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 0.9em;
+    background-color: #2a2a2a; /* Darker background for result box */
+    border-radius: 8px;
+    color: #ffffff;
+    border: 1px solid #00bfff;
+    text-align: left;
+}
+
