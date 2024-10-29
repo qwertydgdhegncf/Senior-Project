@@ -264,3 +264,91 @@ function toggleHotlineInfo(id) {
     const info = document.getElementById(id);
     info.style.display = (info.style.display === "none" || info.style.display === "") ? "block" : "none";
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const healthForm = document.getElementById("health-tracker-form");
+    const healthLog = document.getElementById("health-log").getElementsByTagName("tbody")[0];
+    const addEntryButton = document.getElementById("add-entry");
+
+    // Load stored data if available
+    const storedData = JSON.parse(localStorage.getItem("healthData")) || [];
+    storedData.forEach(entry => addTableRow(entry));
+
+    // Add event listener to the "Add Entry" button
+    addEntryButton.addEventListener("click", function () {
+        const sleepHours = document.getElementById("sleep-hours").value;
+        const stepsWalked = document.getElementById("steps-walked").value;
+        const waterIntake = document.getElementById("water-intake").value;
+
+        if (sleepHours && stepsWalked && waterIntake) {
+            const entry = {
+                date: new Date().toLocaleDateString(),
+                sleepHours: sleepHours,
+                stepsWalked: stepsWalked,
+                waterIntake: waterIntake
+            };
+
+            addTableRow(entry);
+            saveData(entry);
+
+            // Reset form inputs
+            healthForm.reset();
+        } else {
+            alert("Please fill in all fields.");
+        }
+    });
+
+    // Function to add a row to the table
+    function addTableRow(entry) {
+        const row = healthLog.insertRow();
+        row.insertCell(0).textContent = entry.date;
+        row.insertCell(1).textContent = entry.sleepHours;
+        row.insertCell(2).textContent = entry.stepsWalked;
+        row.insertCell(3).textContent = entry.waterIntake;
+    }
+
+    // Function to save data to local storage
+    function saveData(entry) {
+        storedData.push(entry);
+        localStorage.setItem("healthData", JSON.stringify(storedData));
+    }
+});
+
+document.getElementById('get-advice').addEventListener('click', function() {
+    const age = parseInt(document.getElementById('age-input').value);
+    const recommendationsDiv = document.getElementById('recommendations');
+    let recommendations = "";
+
+    if (age >= 1 && age <= 12) {
+        recommendations = `
+            <p><strong>Recommended Steps:</strong> 8,000 - 10,000 steps per day</p>
+            <p><strong>Water Intake:</strong> 1 - 1.5 liters per day</p>
+            <p><strong>Sleep:</strong> 9 - 12 hours per night</p>
+        `;
+    } else if (age >= 13 && age <= 18) {
+        recommendations = `
+            <p><strong>Recommended Steps:</strong> 10,000 - 12,000 steps per day</p>
+            <p><strong>Water Intake:</strong> 1.5 - 2 liters per day</p>
+            <p><strong>Sleep:</strong> 8 - 10 hours per night</p>
+        `;
+    } else if (age >= 19 && age <= 64) {
+        recommendations = `
+            <p><strong>Recommended Steps:</strong> 7,000 - 10,000 steps per day</p>
+            <p><strong>Water Intake:</strong> 2 - 3 liters per day</p>
+            <p><strong>Sleep:</strong> 7 - 9 hours per night</p>
+        `;
+    } else if (age >= 65) {
+        recommendations = `
+            <p><strong>Recommended Steps:</strong> 6,000 - 8,000 steps per day</p>
+            <p><strong>Water Intake:</strong> 1.5 - 2 liters per day</p>
+            <p><strong>Sleep:</strong> 7 - 8 hours per night</p>
+        `;
+    } else {
+        recommendations = "<p>Please enter a valid age.</p>";
+    }
+
+    recommendationsDiv.innerHTML = recommendations;
+});
+
+
