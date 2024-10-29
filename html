@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diagnocare Central</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -21,78 +22,31 @@
         </div>
     </header>
 
-    <section id="home" class="hero">
+    <section id="hero" class="hero">
         <div class="container">
-            <h2>Your Health, Our Priority</h2>
-            <p>Providing top-notch medical diagnostics and care.</p>
-            <p class="doctors">Our experts: Dr. Siddharth Rao Kartik, Dr. Priya Nahal, Dr. Bolormaa Munkhold</p>
+            <h2>Find the right care for your symptoms</h2>
+            <p>Enter your symptoms to receive personalized health insights and recommendations.</p>
+            <button id="open-chatbot">Get Started</button>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>Diagnocare Central is dedicated to providing accurate medical diagnostics with compassionate care. Our team of experienced professionals is here to help you with all your diagnostic needs.</p>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="service">
-                <h3>Diagnostic Testing</h3>
-                <p>Comprehensive testing to diagnose various conditions accurately.</p>
-            </div>
-            <div class="service">
-                <h3>Consultation</h3>
-                <p>Expert consultations to help interpret diagnostic results and plan treatment.</p>
-            </div>
-            <div class="service">
-                <h3>Follow-Up Care</h3>
-                <p>Continued support and follow-up care to ensure optimal health outcomes.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Chatbot Structure -->
+    <!-- Chatbot Section -->
     <div id="chatbot" class="chatbot">
         <div class="chatbot-header">
-            🤖 AI Chatbot
+            🤖 Diagnocare Bot
             <button id="close-chatbot">X</button>
         </div>
         <div id="messages" class="messages"></div>
         <form id="chat-form">
-            <input type="text" id="user-input" placeholder="Enter at least 2 symptoms..." required />
+            <input type="text" id="user-input" placeholder="Enter your symptoms (e.g., headache, fever)" required />
             <button type="submit">Send</button>
         </form>
     </div>
 
-    <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <script src="script.js"></script>
-
-    <!-- Footer -->
     <footer>
         &copy; 2024 Diagnocare Central. All rights reserved.
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
