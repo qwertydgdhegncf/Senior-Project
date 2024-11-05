@@ -1334,3 +1334,14 @@ input:checked + .slider:before {
     text-align: left;
 }
 
+#search-bar {
+    padding: 8px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.education-item {
+    display: none;
+    margin: 10px 0;
+}
+
