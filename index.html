@@ -1,59 +1,574 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagnocare Central</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Diagnocare Central</h1>
-            <nav>
-                <ul>
-                    <li><a href="home.html" target="_blank">Home</a></li>
-                    <li><a href="about.html" target="_blank">About</a></li>
-                    <li><a href="services.html" target="_blank">Services</a></li>
-                    <li><a href="education.html" target="_blank">Education</a></li>
-                    <li><a href="contact.html" target="_blank">Contact</a></li>
-                </ul>
-            </nav>            
-        </div>
-    </header>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>DiagnoCentral Care</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- owl carousel -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- custom css -->
+        <link rel = "stylesheet" href = "assets/css/main.css" />
+        <link rel = "stylesheet" href = "assets/css/utilities.css" />
+        <!-- normalize.css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        
+        <div class="page-wrapper">
+            <!-- header -->
+            <header class = "header">
+                <nav class = "navbar">
+                    <div class="container">
+                        <div class="navbar-content d-flex justify-content-between align-items-center">
+                            <div class = "brand-and-toggler d-flex align-items-center justify-content-between">
+                                <a href = "#" class = "navbar-brand d-flex align-items-center">
+                                    
+                                    <span class="brand-text fw-7">DiagnoCentral Care</span>
+                                </a>
+                                <button type = "button" class = "d-none navbar-show-btn">
+                                    <i class = "fas fa-bars"></i>
+                                </button>
+                            </div>
+
+                            <div class = "navbar-box">
+                                <button type = "button" class = "navbar-hide-btn">
+                                    <i class = "fas fa-times"></i>
+                                </button>
+
+                                <ul class = "navbar-nav d-flex align-items-center">
+                                    <li class = "nav-item">
+                                        <a href = "#" class = "nav-link text-white nav-active text-nowrap">Home</a>
+                                    </li>
+                                    <li class = "nav-item">
+                                        <a href = "#" class = "nav-link text-white text-nowrap">About</a>
+                                    </li>
+                                    <li class = "nav-item">
+                                        <a href = "#" class = "nav-link text-white text-nowrap">Services</a>
+                                    </li>
+                                    <li class = "nav-item">
+                                        <a href = "#" class = "nav-link text-white text-nowrap">Symptons checker </a>
+                                    </li>
+                                    <li class = "nav-item">
+                                        <a href = "#" class = "nav-link text-white text-nowrap">Personalized Lifestyle</a>
+                                        <li class = "nav-item">
+                                            <a href = "#" class = "nav-link text-white text-nowrap">Education 
+                                                <li class = "nav-item">
+                                                    <a href = "#" class = "nav-link text-white text-nowrap">Tracking</a>
+                                            </a>
+                                            <li class = "nav-item">
+                                                <a href = "#" class = "nav-link text-white text-nowrap">Consultation </a>
+                                    </li>
+                                    <li class = "nav-item">
+                                        <a href = "#" class = "nav-link text-white text-nowrap"></a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                
+
+                <div class="banner">
+                    <div class="container">
+                        <div class="banner-content">
+                            <div class="banner-left">
+                                <div class="content-wrapper">
+                                    <h1 class="banner-title">Personalized Healthcare <br> Anytime, Anywhere</h1>
+                                    <p class="text text-white">DiagnoCare Central offers accessible, progressive, and affordable care, available on online for everyone.</p>
+                                    <a href="#" class="btn btn-secondary">Get Started Today</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="banner">
+                    <div class="banner-right d-flex align-items-center justify-content-end">
+                        <img src="assets/images/frontPage.png" alt="Healthcare Banner" class="full-page-image">
+                    </div>
+                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- end of header -->
+
+
     
+            <main>
+                <section class = "sc-services">
+                    <div class = "services-shape">
+                        <img src = "assets/images/curve-shape-1.png" alt = "">
+                    </div>
+                    
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="container">
-            <h2>Find the right care for your symptoms</h2>
-            <p>Enter your symptoms to receive personalized health insights and recommendations.</p>
-            <button id="open-chatbot">Get Started</button>
+                            <div class="container">
+                                <div class="doctors-content">
+                                    <div class="title-box text-center">
+                                        <div class="content-wrapper">
+                                            <h3 class="title-box-name">About Our Doctors</h3>
+                                            <div class="title-separator mx-auto"></div>
+                                            <p class="text title-box-text">Our team of highly qualified doctors is dedicated to providing exceptional care tailored to your health needs. With years of experience and a commitment to excellence, they are here to guide you through your healthcare journey. Consult with our specialists to find the best treatment options for you.</p>
+                                      <!--doctor's information 
+                                            -->
+                                            
+                 
+                                                            <div class="doctors-list">
+                                                                <div class="doctor-box">
+                                                                    <div class="doctor">
+                                                                        <img src="assets/images/d1.png" alt="Dr. Bolormaa" class="doctor-image">
+                                                                        <h4 class="doctor-name">Bolormaa</h4>
+                                                                        <p class="doctor-description">Specialist in family medicine with over 10 years of experience in providing comprehensive care to patients of all ages.</p>
+                                                                    </div>
+                                            
+                                                                    <div class="doctor">
+                                                                        <img src="assets/images/d4.png" alt="Dr. Sid" class="doctor-image">
+                                                                        <h4 class="doctor-name">Sid</h4>
+                                                                        <p class="doctor-description">Expert in cardiology, dedicated to heart health and wellness with extensive experience in patient care and treatment plans.</p>
+                                                                    </div>
+                                            
+                                                                    <div class="doctor">
+                                                                        <img src="assets/images/d9.png" alt="Dr. Priya" class="doctor-image">
+                                                                        <h4 class="doctor-name">Priya</h4>
+                                                                        <p class="doctor-description">Renowned pediatrician focused on children's health, providing compassionate care and guidance to families.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>    
 
-            <!-- Right-aligned decorative image -->
-            <img src="https://media.istockphoto.com/vectors/medical-center-hospital-building-vector-design-vector-id1344779917?k=20&m=1344779917&s=612x612&w=0&h=0ngldC8jlGwpARV0mbkXaThscIDuVhSZlKtkueAUzDk=" alt="Medical Center Illustration" class="hero-image">
+                            <!--end here -->
+
+                            
+                            <!-- chatbot comes here -->
+
+                            <div class = "services-list">
+                                <div class = "services-item">
+                                    <div class = "item-icon">
+                                        <img src = "assets/images/service-icon-1.png" alt = "service icon">
+                                    </div>
+                                    <h5 class = "item-title fw-7">Symptons Checker</h5>
+                                    <p class = "text">Using our AI Health Chatbot: Discover Your Symptoms Instantly.</p>
+                                    <button id="open-chatbot">Get Started</button>
+
+            
+
+        <!-- Chatbot Section -->
+    <div id="chatbot" class="chatbot">
+        <div class="chatbot-header">
+            🤖 Diagnocare Bot
+            <button id="close-chatbot">X</button>
         </div>
-    </section>
+        <div id="messages" class="messages"></div>
+        <form id="chat-form">
+            <input type="text" id="user-input" placeholder="Enter your symptoms (e.g., headache, fever)" required />
+            <button type="submit">Send</button>
+        </form>
+    </div>
 
-</script>
-<!-- Chatbot Section -->
-   <div id="chatbot" class="chatbot">
-       <div class="chatbot-header">
-           🤖 Diagnocare Bot
-           <button id="close-chatbot">X</button>
-       </div>
-       <div id="messages" class="messages"></div>
-       <form id="chat-form">
-           <input type="text" id="user-input" placeholder="Enter your symptoms (e.g., headache, fever)" required />
-           <button type="submit">Send</button>
-       </form>
-   </div>
 
-   <footer>
-       &copy; 2024 Diagnocare Central. All rights reserved.
-   </footer>
+                </div>
+                             <!-- end here -->   
 
-   <script src="script.js"></script>
-</body>
+
+                        <!-- personalized lifestyle -->
+
+
+                                <div class = "services-item">
+                                    <div class = "item-icon">
+                                        <img src = "assets/images/service-icon-4.png" alt = "service icon">
+                                    </div>
+                                    <h5 class = "item-title fw-7">Personalized Lifestyle  </h5>
+                                    <p class = "text">Free meal suggestions from our trusted doctors and get the best recommendations.</p>
+                                    <form id="medical-history-form">
+                                        <div class="form-group">
+                                            <label for="age">Age:</label>
+                                            <input type="number" id="age" placeholder="Enter your age" min="1" required>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                            <label for="height">Height (in inches):</label>
+                                            <input type="number" id="height" placeholder="Enter your height (e.g., 5.5)" step="0.1" min="0" required>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                            <label for="weight">Weight (in pounds):</label>
+                                            <input type="number" id="weight" placeholder="Enter your weight in pounds" min="1" required>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                            <label for="medical-history">Medical History:</label>
+                                            <textarea id="medical-history" rows="4" placeholder="Enter your medical history" required></textarea>
+                                        </div>
+                                        
+                                        <button type="submit">Get Suggestions</button>
+                                    </form>
+                            
+                                    <div id="suggestions" class="suggestions">
+                                        <!-- Suggestions will be displayed here -->
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div class = "services-item">
+                                    <div class = "item-icon">
+                                        <img src = "assets/images/service-icon-5.png" alt = "service icon">
+                                    </div>
+                                    <h5 class = "item-title fw-7">Education</h5>
+                                    <p class = "text">Learn about diseases.</p>
+                                </div>
+
+                                <div class = "services-item">
+                                    <div class = "item-icon">
+                                        <img src = "assets/images/service-icon-6.png" alt = "service icon">
+                                    </div>
+                                    <h5 class = "item-title fw-7">Tracking</h5>
+                                    <p class = "text">Track and save your mental history and health data</p>
+                                     <!-- Form to enter daily health metrics -->
+
+                                     
+        <form id="health-tracker-form">
+
+            <label for="sleep-hours">Sleep Hours:</label>
+            <input type="number" id="sleep-hours" placeholder="Enter hours slept" min="0" step="0.5" required>
+            
+            <label for="steps-walked">Steps Walked:</label>
+            <input type="number" id="steps-walked" placeholder="Enter steps" min="0" required>
+            
+            <label for="water-intake">Water Intake (liters):</label>
+            <input type="number" id="water-intake" placeholder="Enter liters of water" min="0" step="0.1" required>
+            
+            <button type="button" id="add-entry">Add Entry</button>
+        </form>
+
+        <!-- Table to display health metrics -->
+        <table id="health-log" class="health-log">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Sleep Hours</th>
+                    <th>Steps Walked</th>
+                    <th>Water Intake (liters)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Entries will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+<section style="padding: 20px;">
+    <div class="services-item">
+        <div class="item-icon">
+            <img src="assets/images/service-icon-5.png" alt="service icon">
+        </div>
+        <h5 class="item-title fw-7">Consultation</h5>
+        <p class="text">Schedule an online consultation with one of our experienced doctors.</p>
+        
+        <form id="booking-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email address" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" required>
+            
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" required>
+            
+            <label for="doctor">Select Doctor:</label>
+            <select id="doctor" required>
+                <option value="dr-siddharth">Dr. Siddharth</option>
+                <option value="dr-priya">Dr. Priya Nahal</option>
+                <option value="dr-bolormaa">Dr. Bolormaa</option>
+            </select>
+            
+            <button type="submit">Book Consultation</button>
+        </form>
+
+        <div id="confirmation-message" class="confirmation-message" style="display: none;">
+            <p>Your consultation has been booked successfully! You will receive a confirmation email soon.</p>
+        </div>
+    </div>
+</section>
+                              
+
+                <section class = "sc-grid sc-grid-one">
+                    <div class="container">
+                        <div class = "grid-content d-grid align-items-center">
+                            <div class = "grid-img">
+                                <img src = "assets/images/health-care-img.png" alt = "">
+                            </div>
+                            <div class = "grid-text">
+                                <div class = "content-wrapper text-start">
+                                    <div class = "title-box">
+                                        <h3 class = "title-box-name text-white">Leading healthcare providers</h3>
+                                        <div class = "title-separator mx-auto"></div>
+                                    </div>
+
+                                    <p class = "text title-box-text text-white">DiagnoCare provides progressive, and affordable healthcare, accessible on mobile and online for everyone. To us, it's not just work. We take pride in the solutions we deliver</p>
+                                    <button type = "button" class = "btn btn-white-outline">Learn more</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class = "sc-feedback">
+                    <div class="container">
+                        <div class = "feedback-content">
+                            <div class = "feedback-element">
+                               
+                            </div>
+                            <div class="feedback-element-2">
+                                <img src = "assets/images/p4.webp">
+                            </div>
+                            <div class = "title-box text-center">
+                                <div class = "content-wrapper">
+                                    <h3 class = "title-box-name text-white">What our customer are saying</h3>
+                                    <div class = "title-separator mx-auto"></div>
+                                </div>
+                            </div>
+
+                            <div class = "feedback-list feedback-slider owl-carousel owl-theme">
+                                <div class = "feedback-item d-grid">
+                                    <div class = "item-left d-flex align-items-center">
+                                        <div class = "item-img">
+                                            <img src = "assets/images/pic1.webp" alt = "">
+                                        </div>
+                                        <div class = "item-info text-white">
+                                            <p class = "fw-7 name">Nicole </p>
+                                            <span class = "designation fw-4">Founder Ceo </span>
+                                        </div>
+                                    </div>
+                                    <div class = "item-right">
+                                        <p class = "text text-white">"I love the symptom checker feature. It’s quick and easy to use, and the suggestions for possible conditions were surprisingly accurate!"</p>
+                                    </div>
+                                </div>
+
+                                <div class = "feedback-item d-grid">
+                                    <div class = "item-left d-flex align-items-center">
+                                        <div class = "item-img">
+                                            <img src = "assets/images/p5.webp" alt = "">
+                                        </div>
+                                        <div class = "item-info text-white">
+                                            <p class = "fw-7 name">Sandra</p>
+                                            <span class = "designation fw-4">Founder Circle</span>
+                                        </div>
+                                    </div>
+                                    <div class = "item-right">
+                                        <p class = "text text-white">"The app is incredibly helpful! I got personalized meal suggestions and health tips based on my medical history, which makes me feel more in control of my health"</p>
+                                    </div>
+                                </div>
+
+                                <div class = "feedback-item d-grid">
+                                    <div class = "item-left d-flex align-items-center">
+                                        <div class = "item-img">
+                                            <img src = "assets/images/p8.jpg" alt = "">
+                                        </div>
+                                        <div class = "item-info text-white">
+                                            <p class = "fw-7 name">Taylor Simon </p>
+                                            <span class = "designation fw-4">Ceo</span>
+                                        </div>
+                                    </div>
+                                    <div class = "item-right">
+                                        <p class = "text text-white">"This app has become an essential part of my daily routine. The health insights and goal tracking features keep me motivated to stay on track with my wellness goals."</p>
+                                    </div>
+                                </div>
+
+                                <div class = "feedback-item d-grid">
+                                    <div class = "item-left d-flex align-items-center">
+                                        <div class = "item-img">
+                                            <img src = "assets/images/p4.webp" alt = "">
+                                        </div>
+                                        <div class = "item-info text-white">
+                                            <p class = "fw-7 name">John </p>
+                                            <span class = "designation fw-4">Founder Circle</span>
+                                        </div>
+                                    </div>
+                                    <div class = "item-right">
+                                        <p class = "text text-white">"The virtual diagnosis tool gave me peace of mind when I was feeling unwell and couldn't get an appointment right away. It guided me through my symptoms and provided useful insights"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class = "sc-articles">
+                    <div class = "articles-shape">
+                         
+                    </div>
+                   
+                            <div class = "title-box text-center">
+                                <div class = "content-wrapper">
+                                    <h3 class = "title-box-name">Check out our latest article</h3>
+                                    <div class = "title-separator mx-auto"></div>
+                                </div>
+                            </div>
+                            
+                            <div class = "articles-list d-flex flex-wrap justify-content-center">
+                                <article class = "articles-item">
+                                    <div class = "item-img">
+                                        <img src = "assets/images/h1.jpg">
+                                    </div>
+                                    <div class = "item-body">
+                                        <div class = "item-title">Disease detection, check up in the laboratory</div>
+                                        <p class = "text">the health laboratory plays a crucial role in detecting diseases...</p>
+                                        <a href = "#" class = "item-link text-blue d-flex align-items-baseline">
+                                            <span class = "item-link-text">Read more</span>
+                                            <span class = "item-link-icon">
+                                                <i class = "fas fa-arrow-right"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </article>
+
+                                <article class = "articles-item">
+                                    <div class = "item-img">
+                                        <img src = "assets/images/h2.jpeg">
+                                    </div>
+                                    <div class = "item-body">
+                                        <div class = "item-title">Breaking the Silence: Mental Health Awareness/div>
+                                        <p class = "text">With increasing awareness about mental health issues, there is a growing need for accessible and effective solutions that can support individuals on their journey to mental wellness.</p>
+                                        <a href = "#" class = "item-link text-blue d-flex align-items-baseline">
+                                            <span class = "item-link-text">Read more</span>
+                                            <span class = "item-link-icon">
+                                                <i class = "fas fa-arrow-right"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </article>
+
+                                <article class = "articles-item">
+                                    <div class = "item-img">
+                                        <img src = "assets/images/h3.jpeg">
+                                    </div>
+                                    <div class = "item-body">
+                                        <div class = "item-title">Natural care for healthy facial skin</div>
+                                        <p class = "text">A healthy lifestyle should start from now and also for your skin health ...</p>
+                                        <a href = "#" class = "item-link text-blue d-flex align-items-baseline">
+                                            <span class = "item-link-text">Read more</span>
+                                            <span class = "item-link-icon">
+                                                <i class = "fas fa-arrow-right"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class = "footer">
+                <div class = "container">
+                    <div class = "footer-content">
+                        <div class = "footer-list d-grid text-white">
+                            <div class = "footer-item">
+                                <a href = "#" class = "navbar-brand d-flex align-items-center">
+                                    <span class = "brand-shape d-inline-block text-white"></span>
+                                    <span class = "brand-text fw-7">DiagnoCare Central </span>
+                                </a>
+                                <p class = "text-white">DiagnoCare provides progressive, and affordable healthcare, accessible on online for everyone</p>
+                                <p class = "text-white copyright-text">&copy; DiagnoCentral  PTY LTD 2023. All rights reserved.</p>
+                            </div>
+
+                            <div class = "footer-item">
+                                
+                                <ul class = "footer-links">
+                                    <div class="doctor-contact">
+                                        <h3>Dr. Siddharth</h3>
+                                        <p><strong>Phone:</strong> +1-555-234-5678</p>
+                                        <p><strong>Email:</strong> dr.siddharth@diagnocare.com</p>
+                                    </div>
+                                    <div class="doctor-contact">
+                                        <h3>Dr. Priya Nahal</h3>
+                                        <p><strong>Phone:</strong> +1-555-345-6789</p>
+                                        <p><strong>Email:</strong> dr.priya.nahal@diagnocare.com</p>
+                                    </div>
+                                    <div class="doctor-contact">
+                                        <h3>Dr. Bolormaa</h3>
+                                        <p><strong>Phone:</strong> +1-555-456-7890</p>
+                                        <p><strong>Email:</strong> dr.bolormaa@diagnocare.com</p>
+                                    </div>
+
+                            
+
+                            <div class = "footer-item">
+                                <h3 class = "footer-item-title">Help</h3>
+                                <ul class = "footer-links">
+                                    <div class="emergency-section">
+                                        <h2>Emergency Contact & Support</h2>
+                                        <p>If you or someone you know needs help, please reach out to one of these hotlines for immediate support.</p>
+                        
+                                        <!-- Hotline Buttons and Info -->
+                                        <div class="hotline-contact">
+                                            <button onclick="toggleHotlineInfo('smoking-info')">Quit Smoking</button>
+                                            <div id="smoking-info" class="hotline-info" style="display: none;">
+                                                <p><strong>Hotline:</strong> 1-800-QUIT-NOW (784-8669)</p>
+                                                <p><strong>Description:</strong> Support for individuals trying to quit smoking.</p>
+                                            </div>
+                                        </div>
+                                        <div class="hotline-contact">
+                                            <button onclick="toggleHotlineInfo('alcohol-info')">Quit Alcohol</button>
+                                            <div id="alcohol-info" class="hotline-info" style="display: none;">
+                                                <p><strong>Hotline:</strong> 1-888-ALCOHOL (252-6465)</p>
+                                                <p><strong>Description:</strong> Support and resources for those struggling with alcohol dependency.</p>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="hotline-contact">
+                                            <button onclick="toggleHotlineInfo('domestic-violence-info')">Domestic Violence</button>
+                                            <div id="domestic-violence-info" class="hotline-info" style="display: none;">
+                                                <p><strong>Hotline:</strong> 1-800-799-7233 (SAFE)</p>
+                                                <p><strong>Description:</strong> Confidential support for individuals experiencing domestic violence.</p>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="hotline-contact">
+                                            <button onclick="toggleHotlineInfo('sexual-assault-info')">Sexual Assault</button>
+                                            <div id="sexual-assault-info" class="hotline-info" style="display: none;">
+                                                <p><strong>Hotline:</strong> 1-800-656-HOPE (4673)</p>
+                                                <p><strong>Description:</strong> 24/7 support for survivors of sexual assault.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+
+                <div class = "footer-element-1">
+                    <img src = "assets/images/element-img-4.png" alt = "">
+                </div>
+                <div class = "footer-element-2">
+                    <img src = "assets/images/element-img-5.png" alt = "">
+                </div>
+            </footer>
+        </div>
+        
+
+
+        <!-- jquery cdn -->
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <!-- owl carousel -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- custom js -->
+        <script src = "assets/js/script.js"></script>
+    </body>
 </html>

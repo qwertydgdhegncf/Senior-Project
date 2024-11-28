@@ -165,217 +165,134 @@ function scrollToBottom() {
     const messagesContainer = document.getElementById('messages');
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
+document.getElementById('medical-history-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
 
+    // Collect input values
+    const age = document.getElementById('age').value;
+    const height = document.getElementById('height').value;
+    const weight = document.getElementById('weight').value;
+    const medicalHistory = document.getElementById('medical-history').value;
 
-function searchEducation() {
-    const searchTerm = document.getElementById('search-bar').value.toLowerCase();
-    const educationItems = document.querySelectorAll('.education-item');
-    let resultsFound = false;
-    const displayedDiseases = new Set(); // Set to track displayed diseases
+    // Display suggestions
+    const suggestionsDiv = document.getElementById('suggestions');
+    suggestionsDiv.innerHTML = `
+        <h6>Your Suggestions:</h6>
+        <p>Based on your age (${age}), height (${height} inches), weight (${weight} pounds), and medical history, we recommend the following:</p>
+        <ul>
+            <li>Increase your daily water intake.</li>
+            <li>Consider a balanced diet rich in fruits and vegetables.</li>
+            <li>Consult with a nutritionist for personalized meal plans.</li>
+        </ul>
+        <h6>Meal Suggestions:</h6>
+        <ul>
+            ${getMealSuggestions(age, height, weight, medicalHistory)}
+        </ul>
+    `;
+});
 
-    // Hide all items first
-    educationItems.forEach(item => {
-        item.style.display = 'none'; // Start by hiding all items
+function getMealSuggestions(age, height, weight, medicalHistory) {
+    // Simple logic to generate meal suggestions based on age, height, and weight
+    let meals = [];
+
+    // Calculate BMI
+    const heightInMeters = height * 0.0254; // Convert height to meters
+    const weightInKg = weight * 0.453592; // Convert weight to kg
+    const bmi = weightInKg / (heightInMeters * heightInMeters);
+
+    // Generate meal suggestions based on BMI
+    if (bmi < 18.5) {
+        meals.push("<li>High-calorie smoothies (e.g., banana, peanut butter, and yogurt).</li>");
+        meals.push("<li>Whole grain pasta with olive oil and vegetables.</li>");
+        meals.push("<li>Nut butter on whole grain toast with honey.</li>");
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+        meals.push("<li>Grilled chicken salad with a variety of vegetables.</li>");
+        meals.push("<li>Quinoa bowl with black beans, corn, and avocado.</li>");
+        meals.push("<li>Oatmeal topped with fresh fruits and nuts.</li>");
+    } else {
+        meals.push("<li>Grilled fish with steamed vegetables.</li>");
+        meals.push("<li>Vegetable stir-fry with tofu and brown rice.</li>");
+        meals.push("<li>Salad with lean protein (e.g., chicken or turkey) and whole grain croutons.</li>");
+    }
+
+    // Add meal suggestions based on medical history
+    if (medicalHistory.includes("diabetes")) {
+        meals.push("<li>Low-carb meals with lean protein and vegetables.</li>");
+    } else if (medicalHistory.includes("heart disease")) {
+        meals.push("<li>Low-sodium meals with lean protein and whole grains.</li>");
+    }
+
+    return meals.join("");
+}
+
+$(document).ready(function(){
+    $('.feedback-slider').owlCarousel({
+        loop: false,
+        margin: 10,
+        nav: true,
+        items: 1,
+        autoplay: true,
+        navText: ["<i class = 'fas fa-arrow-left'></i>", "<i class = 'fas fa-arrow-right'></i>"]
     });
 
-    educationItems.forEach(item => {
-        const keywords = item.getAttribute('data-keywords');
-
-        // Check if the keywords match the search term
-        if (keywords.toLowerCase().includes(searchTerm)) {
-            const diseaseName = item.querySelector('h3').textContent;
-
-            // Only display the item if it hasn't been displayed yet
-            if (!displayedDiseases.has(diseaseName)) {
-                item.style.display = 'block'; // Show the item
-                displayedDiseases.add(diseaseName); // Add to the set of displayed diseases
-                resultsFound = true;
-            }
-        }
+    // stop animation on resize
+    let resizeTimer;
+    $(window).resize(function(){
+        $(document.body).addClass('resize-animation-stopper');
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            $(document.body).removeClass('resize-animation-stopper');
+        }, 400);
     });
 
-    // Show or hide the education info section based on whether results were found
-    document.getElementById('education-info').style.display = resultsFound ? 'block' : 'none';
-}
+    $('.navbar-show-btn').click(function(){
+        $('.navbar-box').addClass('navbar-box-show');
+    });
 
-function generateSuggestions() {
-    // Get selected gender
-    const gender = document.getElementById('gender').value;
+    $('.navbar-hide-btn').click(function(){
+        $('.navbar-box').removeClass("navbar-box-show");
+    })
+});
+document.getElementById('booking-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
 
-    // Ensure gender is selected
-    if (!gender) {
-        document.getElementById('suggestions').innerText = "Please select a gender.";
-        return;
-    }
+    // Get the input values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const doctor = document.getElementById('doctor').value;
 
-    // Get input values
-    const age = parseInt(document.getElementById('age').value) || 0;
-    const height = document.getElementById('height').value.trim();
-    const weight = parseInt(document.getElementById('weight').value) || 0;
+    // Here you can process the data as needed (e.g., send it to a server)
 
-    // Parse height
-    const heightMatch = height.match(/^(\d+)'(\d+)"$/);
-    if (!heightMatch) {
-        document.getElementById('suggestion-text').innerText = "Please provide a valid height in the format 5'8\".";
-        return;
-    }
-    const heightFeet = parseInt(heightMatch[1]);
-    const heightInches = parseInt(heightMatch[2]);
+    // Display confirmation message
+    const confirmationMessage = document.getElementById('confirmation-message');
+    confirmationMessage.style.display = 'block'; // Show the confirmation message
 
-    // Ensure age, height, and weight are entered
-    if (!age || !heightFeet || !heightInches || !weight) {
-        document.getElementById('suggestions').innerText = "Please provide valid age, height, and weight.";
-        return;
-    }
+    // Optionally, you can clear the form fields
+    document.getElementById('booking-form').reset();
+});
 
-    const BMIHeightInInches = (heightFeet * 12) + heightInches;
-    const finalBMI = (weight / (BMIHeightInInches * BMIHeightInInches)) * 703;
+document.getElementById('add-entry').addEventListener('click', function() {
+    // Get the input values
+    const sleepHours = document.getElementById('sleep-hours').value;
+    const stepsWalked = document.getElementById('steps-walked').value;
+    const waterIntake = document.getElementById('water-intake').value;
 
-    // Get medical history checkboxes
-    const medicalHistory = {
-        alcoholDrugAbuse: document.getElementById('alcoholDrugAbuse').checked,
-        asthma: document.getElementById('asthma').checked,
-        cancer: document.getElementById('cancer').checked,
-        diabetes: document.getElementById('diabetes').checked,
-        heartDisease: document.getElementById('heartDisease').checked,
-        highBloodPressure: document.getElementById('highBloodPressure').checked,
-        highCholesterol: document.getElementById('highCholesterol').checked,
-        thyroidDisease: document.getElementById('thyroidDisease').checked,
-        migraineHeadaches: document.getElementById('migraineHeadaches').checked,
-        stroke: document.getElementById('stroke').checked
-    };
+    // Here you can process the data as needed (e.g., send it to a server)
 
-    let suggestions = "";
+    // Display confirmation message
+    const confirmationMessage = document.createElement('div');
+    confirmationMessage.className = 'confirmation-message';
+    confirmationMessage.innerHTML = `<p>Your health metrics have been recorded successfully!</p>
+                                      <p>Sleep Hours: ${sleepHours}</p>
+                                      <p>Steps Walked: ${stepsWalked}</p>
+                                      <p>Water Intake: ${waterIntake} liters</p>`;
+    
+    // Append the confirmation message to the form
+    document.getElementById('health-tracker-form').appendChild(confirmationMessage);
 
-    // Generate suggestions based on gender and age
-    if (gender === 'female') {
-        //suggestions += "Female Suggestions:\n";
-
-        if (age >= 50) {
-            suggestions += "- Consider calcium and vitamin D supplements to support bone health.\n";
-        }
-        if (weight > 150) {
-            suggestions += "- Maintain a balanced diet with lean proteins and complex carbs.\n";
-        }
-
-        // BMI-related
-        if (finalBMI < 18.5) {
-            suggestions += "- You are underweight. Increase calorie intake with nutrient-dense foods.\n";
-        } else if (finalBMI >= 18.5 && finalBMI <= 24.9) {
-            suggestions += "- Maintain a balanced diet with healthy proteins and complex carbs.\n";
-        } else if (finalBMI >= 25) {
-            suggestions += "- You are overweight. Focus on portion control and include more fruits and vegetables in your diet.\n";
-        }
-
-        if (medicalHistory.alcoholDrugAbuse) {
-            suggestions += "- Seek support groups and counseling for substance use.\n";
-        }
-        if (medicalHistory.asthma) {
-            suggestions += "- Avoid allergens and consider breathing exercises.\n";
-        }
-        if (medicalHistory.cancer) {
-            suggestions += "- Prioritize nutrient-dense foods; consult with an oncologist for personalized dietary advice.\n";
-        }
-        if (medicalHistory.diabetes) {
-            suggestions += "- Monitor blood sugar levels and avoid sugary foods.\n";
-        }
-        if (medicalHistory.heartDisease) {
-            suggestions += "- Follow a heart-healthy diet, including omega-3 fatty acids and fiber-rich foods.\n";
-        }
-        if (medicalHistory.highBloodPressure) {
-            suggestions += "- Reduce sodium intake and avoid processed foods.\n";
-        }
-        if (medicalHistory.highCholesterol) {
-            suggestions += "- Increase fiber intake and avoid saturated fats.\n";
-        }
-        if (medicalHistory.thyroidDisease) {
-            suggestions += "- Ensure adequate iodine intake and avoid highly processed foods.\n";
-        }
-        if (medicalHistory.migraineHeadaches) {
-            suggestions += "- Avoid known migraine triggers like caffeine, and maintain a regular sleep schedule.\n";
-        }
-        if (medicalHistory.stroke) {
-            suggestions += "- Focus on low-fat, high-fiber foods and maintain a healthy weight.\n";
-        }
-
-    } else if (gender === 'male') {
-        //suggestions += "Male Suggestions:\n";
-
-        if (age >= 50) {
-            suggestions += "- Increase calcium intake for bone health and consider regular screenings for prostate health.\n";
-        }
-        if (weight > 180) {
-            suggestions += "- Consider a balanced, portion-controlled diet rich in lean proteins and low in simple sugars.\n";
-        }
-
-        // BMI-related
-        if (finalBMI < 18.5) {
-            suggestions += "- You are underweight. Increase calorie intake with nutrient-dense foods.\n";
-        } else if (finalBMI >= 18.5 && finalBMI <= 24.9) {
-            suggestions += "- Maintain a balanced diet with healthy proteins and complex carbs.\n";
-        } else if (finalBMI >= 25) {
-            suggestions += "- You are overweight. Focus on portion control and include more fruits and vegetables in your diet.\n";
-        }
-
-        if (medicalHistory.alcoholDrugAbuse) {
-            suggestions += "- Seek support groups and counseling to manage substance use.\n";
-        }
-        if (medicalHistory.asthma) {
-            suggestions += "- Avoid allergens, maintain a healthy weight, and consider breathing exercises.\n";
-        }
-        if (medicalHistory.cancer) {
-            suggestions += "- Consult with healthcare professionals for dietary adjustments to maintain strength and immunity.\n";
-        }
-        if (medicalHistory.diabetes) {
-            suggestions += "- Regularly monitor blood glucose and avoid high-glycemic-index foods.\n";
-        }
-        if (medicalHistory.heartDisease) {
-            suggestions += "- Focus on a heart-healthy diet with low saturated fat and high omega-3 intake.\n";
-        }
-        if (medicalHistory.highBloodPressure) {
-            suggestions += "- Reduce salt intake, avoid alcohol, and focus on potassium-rich foods.\n";
-        }
-        if (medicalHistory.highCholesterol) {
-            suggestions += "- Increase dietary fiber and incorporate more plant-based proteins.\n";
-        }
-        if (medicalHistory.thyroidDisease) {
-            suggestions += "- Avoid excessive soy products and consume iodine-rich foods.\n";
-        }
-        if (medicalHistory.migraineHeadaches) {
-            suggestions += "- Maintain hydration, avoid known triggers, and get adequate sleep.\n";
-        }
-        if (medicalHistory.stroke) {
-            suggestions += "- Prioritize low-fat, high-fiber foods, and stay active with moderate exercise.\n";
-        }
-    }
-
-    // Show the suggestions or a message if nothing is selected
-    if (!suggestions) {
-        document.getElementById('suggestions').innerText = "Please provide more information to generate suggestions.";
-    } else {
-        document.getElementById('suggestions').innerText = suggestions;
-    }
-}
-
-
-// Function to open a new tab for a specific section
-function openTab(section) {
-    // Define the mapping of sections to their corresponding pages
-    const sectionPages = {
-        home: "home.html",
-        about: "about.html",
-        services: "services.html",
-        education: "education.html",
-        contact: "contact.html"
-    };
-
-    // Check if the section exists in the mapping
-    if (sectionPages[section]) {
-        // Open the corresponding page in a new browser tab
-        window.open(sectionPages[section], "_blank");
-    } else {
-        console.error("Section not found: " + section);
-    }
-}
-
-
+    // Optionally, you can clear the form fields
+    document.getElementById('health-tracker-form').reset();
+});
