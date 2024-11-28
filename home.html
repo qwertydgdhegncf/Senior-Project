@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnocare Central</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Diagnocare Central</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html" target="_blank">Home</a></li>
+                    <li><a href="about.html" target="_blank">About</a></li>
+                    <li><a href="services.html" target="_blank">Services</a></li>
+                    <li><a href="education.html" target="_blank">Education</a></li>
+                    <li><a href="contact.html" target="_blank">Contact</a></li>
+                </ul>
+            </nav>            
+        </div>
+    </header>
+    
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <h2>Find the right care for your symptoms</h2>
+            <p>Enter your symptoms to receive personalized health insights and recommendations.</p>
+            <button id="open-chatbot">Get Started</button>
+
+            <!-- Right-aligned decorative image -->
+            <img src="https://media.istockphoto.com/vectors/medical-center-hospital-building-vector-design-vector-id1344779917?k=20&m=1344779917&s=612x612&w=0&h=0ngldC8jlGwpARV0mbkXaThscIDuVhSZlKtkueAUzDk=" alt="Medical Center Illustration" class="hero-image">
+        </div>
+    </section>
+
+</script>
+<!-- Chatbot Section -->
+   <div id="chatbot" class="chatbot">
+       <div class="chatbot-header">
+           🤖 Diagnocare Bot
+           <button id="close-chatbot">X</button>
+       </div>
+       <div id="messages" class="messages"></div>
+       <form id="chat-form">
+           <input type="text" id="user-input" placeholder="Enter your symptoms (e.g., headache, fever)" required />
+           <button type="submit">Send</button>
+       </form>
+   </div>
+
+   <footer>
+       &copy; 2024 Diagnocare Central. All rights reserved.
+   </footer>
+
+   <script src="script.js"></script>
+</body>
+</html>

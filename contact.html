@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnocare Central</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Diagnocare Central</h1>
+            <nav>
+                <ul>
+                    <!--<li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>-->
+                    <li><a href="home.html" target="_blank">Home</a></li>
+                    <li><a href="about.html" target="_blank">About</a></li>
+                    <li><a href="services.html" target="_blank">Services</a></li>
+                    <li><a href="education.html" target="_blank">Education</a></li>
+                    <li><a href="contact.html" target="_blank">Contact</a></li>
+                </ul>
+            </nav>            
+        </div>
+    </header>
+
+</div>
+<section id="contact" class="contact-section">
+    <div class="contact-container">
+        <h2>Contact Our Doctors</h2>
+        <p>Click the button below to view the contact details of our doctors.</p>
+        
+        <button id="show-contacts">Show Contact Details</button>
+
+        <div id="contact-details" class="contact-details" style="display: none;">
+            <!-- Doctor Contact Information -->
+            <div class="doctor-contact">
+                <h3>Dr. Siddharth</h3>
+                <p><strong>Phone:</strong> +1-555-234-5678</p>
+                <p><strong>Email:</strong> dr.siddharth@diagnocare.com</p>
+            </div>
+            <div class="doctor-contact">
+                <h3>Dr. Priya Nahal</h3>
+                <p><strong>Phone:</strong> +1-555-345-6789</p>
+                <p><strong>Email:</strong> dr.priya.nahal@diagnocare.com</p>
+            </div>
+            <div class="doctor-contact">
+                <h3>Dr. Bolormaa</h3>
+                <p><strong>Phone:</strong> +1-555-456-7890</p>
+                <p><strong>Email:</strong> dr.bolormaa@diagnocare.com</p>
+            </div>
+
+            <!-- Emergency Contact Section -->
+            <div class="emergency-section">
+                <h2>Emergency Contact & Support</h2>
+                <p>If you or someone you know needs help, please reach out to one of these hotlines for immediate support.</p>
+
+                <!-- Hotline Buttons and Info -->
+                <div class="hotline-contact">
+                    <button onclick="toggleHotlineInfo('smoking-info')">Quit Smoking</button>
+                    <div id="smoking-info" class="hotline-info" style="display: none;">
+                        <p><strong>Hotline:</strong> 1-800-QUIT-NOW (784-8669)</p>
+                        <p><strong>Description:</strong> Support for individuals trying to quit smoking.</p>
+                    </div>
+                </div>
+
+                <div class="hotline-contact">
+                    <button onclick="toggleHotlineInfo('alcohol-info')">Quit Alcohol</button>
+                    <div id="alcohol-info" class="hotline-info" style="display: none;">
+                        <p><strong>Hotline:</strong> 1-888-ALCOHOL (252-6465)</p>
+                        <p><strong>Description:</strong> Support and resources for those struggling with alcohol dependency.</p>
+                    </div>
+                </div>
+
+                <div class="hotline-contact">
+                    <button onclick="toggleHotlineInfo('domestic-violence-info')">Domestic Violence</button>
+                    <div id="domestic-violence-info" class="hotline-info" style="display: none;">
+                        <p><strong>Hotline:</strong> 1-800-799-7233 (SAFE)</p>
+                        <p><strong>Description:</strong> Confidential support for individuals experiencing domestic violence.</p>
+                    </div>
+                </div>
+
+                <div class="hotline-contact">
+                    <button onclick="toggleHotlineInfo('sexual-assault-info')">Sexual Assault</button>
+                    <div id="sexual-assault-info" class="hotline-info" style="display: none;">
+                        <p><strong>Hotline:</strong> 1-800-656-HOPE (4673)</p>
+                        <p><strong>Description:</strong> 24/7 support for survivors of sexual assault.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Toggle display for each disease item
+    const diseaseToggles = document.querySelectorAll('.disease-toggle');
+    
+    diseaseToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            // Find the associated .disease-info div
+            const info = this.nextElementSibling;
+            
+            // Toggle the display of the info section
+            if (info.style.display === "none" || info.style.display === "") {
+                info.style.display = "block";
+            } else {
+                info.style.display = "none";
+            }
+        });
+    });
+
+    
+    
+    // Toggle display for the contact details section when the button is clicked
+    const showContactsButton = document.getElementById("show-contacts");
+    const contactDetails = document.getElementById("contact-details");
+
+    showContactsButton.addEventListener("click", function() {
+        if (contactDetails.style.display === "none" || contactDetails.style.display === "") {
+            contactDetails.style.display = "block";
+            showContactsButton.textContent = "Hide Contact Details";
+        } else {
+            contactDetails.style.display = "none";
+            showContactsButton.textContent = "Show Contact Details";
+        }
+    });
+});
+
+function toggleHotlineInfo(id) {
+    const info = document.getElementById(id);
+    info.style.display = (info.style.display === "none" || info.style.display === "") ? "block" : "none";
+}
+</script>
+
+   <footer>
+       &copy; 2024 Diagnocare Central. All rights reserved.
+   </footer>
+
+   <script src="script.js"></script>
+</body>
+</html>

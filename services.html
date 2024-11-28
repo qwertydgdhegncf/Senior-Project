@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnocare Central</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Diagnocare Central</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html" target="_blank">Home</a></li>
+                    <li><a href="about.html" target="_blank">About</a></li>
+                    <li><a href="services.html" target="_blank">Services</a></li>
+                    <li><a href="education.html" target="_blank">Education</a></li>
+                    <li><a href="contact.html" target="_blank">Contact</a></li>
+                </ul>
+            </nav>            
+        </div>
+    </header>
+
+<div class="suggestions">
+    <h1>Lifestyle & Food Suggestions</h1>
+    <form id="userForm">
+        <label for="gender">Gender:</label>
+        <select id="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" min="0" max="120" required>
+
+        <label for="height">Height (ft/in):</label>
+        <input type="text" id="height" placeholder="e.g., 5'8&quot;" required>
+
+        <label for="weight">Weight (lbs):</label>
+        <input type="number" id="weight" min="0" required>
+
+        <h3>Medical History:</h3>
+        <div class="checkbox-group">
+            <input type="checkbox" id="alcoholDrugAbuse">
+            <label for="alcoholDrugAbuse">Alcohol/Drug Abuse</label><br>
+
+            <input type="checkbox" id="asthma">
+            <label for="asthma">Asthma</label><br>
+
+            <input type="checkbox" id="cancer">
+            <label for="cancer">Cancer</label><br>
+
+            <input type="checkbox" id="diabetes">
+            <label for="diabetes">Diabetes</label><br>
+
+            <input type="checkbox" id="heartDisease">
+            <label for="heartDisease">Heart Disease</label><br>
+
+            <input type="checkbox" id="highBloodPressure">
+            <label for="highBloodPressure">High Blood Pressure</label><br>
+
+            <input type="checkbox" id="highCholesterol">
+            <label for="highCholesterol">High Cholesterol</label><br>
+
+            <input type="checkbox" id="thyroidDisease">
+            <label for="thyroidDisease">Thyroid Disease</label><br>
+
+            <input type="checkbox" id="migraineHeadaches">
+            <label for="migraineHeadaches">Migraine Headaches</label><br>
+
+            <input type="checkbox" id="stroke">
+            <label for="stroke">Stroke</label>
+        </div>
+
+        <button type="button" onclick="generateSuggestions()">Get Suggestions</button>
+    </form>
+    <h2>Suggestions:</h2>
+
+    <div id="suggestions">
+        <p id="suggestion-text">Please fill out the form above to receive your suggestions.</p>
+      </div>
+</div>
+
+<section id="advisory" class="advisory-section">
+    <div class="advisory-container">
+        <h1>Daily Health Recommendations</h2>
+        <p>Enter your age to see personalized health goals for staying healthy:</p>
+        
+        <label for="age-input">Enter your age:</label>
+        <input type="number" id="age-input" min="1" max="120" placeholder="Your age" required>
+        
+        <button type="button" id="get-advice">Get Recommendations</button>
+
+        <div id="recommendations" class="recommendations">
+            <!-- Personalized recommendations will appear here -->
+        </div>
+    </div>
+</section>
+
+<script>
+    document.getElementById('get-advice').addEventListener('click', function() {
+    const age = parseInt(document.getElementById('age-input').value);
+    const recommendationsDiv = document.getElementById('recommendations');
+    let recommendations = "";
+
+    recommendations += "hello";
+
+    if (age >= 1 && age <= 12) {
+        recommendations = `
+            <p><strong>Recommended Steps:</strong> 8,000 - 10,000 steps per day</p>
+            <p><strong>Water Intake:</strong> 1 - 1.5 liters per day</p>
+            <p><strong>Sleep:</strong> 9 - 12 hours per night</p>
+        `;
+    } else if (age >= 13 && age <= 18) {
+        recommendations = `
+            <p><strong>Recommended Steps:</strong> 10,000 - 12,000 steps per day</p>
+            <p><strong>Water Intake:</strong> 1.5 - 2 liters per day</p>
+            <p><strong>Sleep:</strong> 8 - 10 hours per night</p>
+        `;
+    } else if (age >= 19 && age <= 64) {
+        recommendations = `
+            <p><strong>Recommended Steps:</strong> 7,000 - 10,000 steps per day</p>
+            <p><strong>Water Intake:</strong> 2 - 3 liters per day</p>
+            <p><strong>Sleep:</strong> 7 - 9 hours per night</p>
+        `;
+    } else if (age >= 65) {
+        recommendations = `
+            <p><strong>Recommended Steps:</strong> 6,000 - 8,000 steps per day</p>
+            <p><strong>Water Intake:</strong> 1.5 - 2 liters per day</p>
+            <p><strong>Sleep:</strong> 7 - 8 hours per night</p>
+        `;
+    } else {
+        recommendations = "<p>Please enter a valid age.</p>";
+    }
+
+    recommendationsDiv.innerHTML = recommendations;
+});
+</script>
+
+
+<section id="health-tracker" class="health-tracker-section">
+    <div class="health-tracker-container">
+        <h2>Interactive Health Tracker</h2>
+        <p>Log your daily health metrics to track your wellness over time.</p>
+        
+        <!-- Form to enter daily health metrics -->
+        <form id="health-tracker-form">
+            <label for="sleep-hours">Sleep Hours:</label>
+            <input type="number" id="sleep-hours" placeholder="Enter hours slept" min="0" step="0.5" required>
+            
+            <label for="steps-walked">Steps Walked:</label>
+            <input type="number" id="steps-walked" placeholder="Enter steps" min="0" required>
+            
+            <label for="water-intake">Water Intake (liters):</label>
+            <input type="number" id="water-intake" placeholder="Enter liters of water" min="0" step="0.1" required>
+            
+            <button type="button" id="add-entry">Add Entry</button>
+        </form>
+
+        <!-- Table to display health metrics -->
+        <table id="health-log" class="health-log">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Sleep Hours</th>
+                    <th>Steps Walked</th>
+                    <th>Water Intake (liters)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Entries will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const healthForm = document.getElementById("health-tracker-form");
+    const healthLog = document.getElementById("health-log").getElementsByTagName("tbody")[0];
+    const addEntryButton = document.getElementById("add-entry");
+
+    // Load stored data if available
+    const storedData = JSON.parse(localStorage.getItem("healthData")) || [];
+    storedData.forEach(entry => addTableRow(entry));
+
+    // Add event listener to the "Add Entry" button
+    addEntryButton.addEventListener("click", function () {
+        const sleepHours = document.getElementById("sleep-hours").value;
+        const stepsWalked = document.getElementById("steps-walked").value;
+        const waterIntake = document.getElementById("water-intake").value;
+
+        if (sleepHours && stepsWalked && waterIntake) {
+            const entry = {
+                date: new Date().toLocaleDateString(),
+                sleepHours: sleepHours,
+                stepsWalked: stepsWalked,
+                waterIntake: waterIntake
+            };
+
+            addTableRow(entry);
+            saveData(entry);
+
+            // Reset form inputs
+            healthForm.reset();
+        } else {
+            alert("Please fill in all fields.");
+        }
+    });
+
+    // Function to add a row to the table
+    function addTableRow(entry) {
+        const row = healthLog.insertRow();
+        row.insertCell(0).textContent = entry.date;
+        row.insertCell(1).textContent = entry.sleepHours;
+        row.insertCell(2).textContent = entry.stepsWalked;
+        row.insertCell(3).textContent = entry.waterIntake;
+    }
+
+    // Function to save data to local storage
+    function saveData(entry) {
+        storedData.push(entry);
+        localStorage.setItem("healthData", JSON.stringify(storedData));
+    }
+});
+</script>
+
+<section id="consultation" class="consultation-section">
+    <div class="consultation-container">
+        <h2>Book a Virtual Consultation</h2>
+        <p>Schedule an online consultation with one of our experienced doctors.</p>
+        
+        <form id="booking-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email address" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" required>
+            
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" required>
+            
+            <label for="doctor">Select Doctor:</label>
+            <select id="doctor" required>
+                <option value="dr-siddharth">Dr. Siddharth</option>
+                <option value="dr-priya">Dr. Priya Nahal</option>
+                <option value="dr-bolormaa">Dr. Bolormaa</option>
+            </select>
+            
+            <button type="submit">Book Consultation</button>
+        </form>
+
+        <div id="confirmation-message" class="confirmation-message" style="display: none;">
+            <p>Your consultation has been booked successfully! You will receive a confirmation email soon.</p>
+        </div>
+    </div>
+</section>
+   <footer>
+       &copy; 2024 Diagnocare Central. All rights reserved.
+   </footer>
+
+   <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+    document.getElementById("booking-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    // Show congrats message
+    const congratsMessage = document.createElement("p");
+    congratsMessage.textContent = "🎉 Congrats! Your appointment is being booked.";
+    congratsMessage.style.color = "#00bfff"; // Light blue text color
+    congratsMessage.style.fontWeight = "bold";
+    congratsMessage.style.marginTop = "10px";
+    congratsMessage.style.fontSize = "1.2em";
+    
+    // Append the congrats message above the confirmation message
+    const confirmationDiv = document.getElementById("confirmation-message");
+    confirmationDiv.insertBefore(congratsMessage, confirmationDiv.firstChild);
+    
+    // Show confirmation message
+    confirmationDiv.style.display = "block";
+    
+    // Clear form fields
+    document.getElementById("booking-form").reset();
+    
+    // Optionally, scroll to the confirmation message
+    confirmationDiv.scrollIntoView({ behavior: "smooth" });
+});
+</script>
+
