@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     color: #000;
-    color: #000;
+    background-color: #FFFFFF; /* White background for the home page */
 }
 
 .container {
@@ -13,10 +13,29 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
+.banner {
+    position: fixed; /* Fixes the image to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('/images/back2.jpg'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    z-index: -1; /* Moves the background behind all content */
+}
+
+/* Optional: To style content over the background */
+.content {
+    position: relative; /* Ensures content is above the background */
+    z-index: 1;
+    padding: 20px;
+    color: #FFF; /* Adjust text color for readability */
+}
 
 /* Header styling */
 header {
-    color: #000;
     color: #000;
     padding: 1rem 0;
     text-align: center;
@@ -27,6 +46,8 @@ header nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid #DDD; /* Divider under the tabs */
+    margin-bottom: 10px;
 }
 
 header nav ul li {
@@ -40,8 +61,8 @@ header nav ul li a {
 
 /* Hero section styling */
 .hero {
-    background-color: #f0f0f0;
-    background: linear-gradient(135deg, #007BFF, #00C6FF);
+    background-color: #F0F0F0;
+    background: linear-gradient(135deg, #CCCCCC, #DDDDDD); /* Neutral gradient */
     color: #000;
     padding: 4rem;
     text-align: center;
@@ -55,8 +76,7 @@ header nav ul li a {
 }
 
 .hero button {
-    background-color: #f0f0f0;
-    color: #000;
+    background-color: #E0E0E0; /* Neutral color */
     color: #000;
     padding: 10px 20px;
     border: none;
@@ -64,14 +84,38 @@ header nav ul li a {
     cursor: pointer;
     font-weight: bold;
     margin-top: 20px;
-    color: #000;
 }
 
 .hero button:hover {
-    background-color: #f0f0f0;
-    color: #000;
-    color: #000;
+    background-color: #CCCCCC; /* Slightly darker neutral color */
 }
+
+/* Lifestyle, Suggestions, and Daily Health Recommendations Sections */
+.lifestyleSuggestions, 
+.daily-recommendations-container {
+    border: 1px solid #DDD; /* Light border */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for boxed appearance */
+    margin-top: 20px;
+}
+
+/* General Button Styling */
+button {
+    background-color: #CCCCCC; /* Neutral color */
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #AAAAAA; /* Slightly darker neutral for hover */
+}
+
 
 /* Chatbot styling */
 .chatbot {
@@ -79,84 +123,120 @@ header nav ul li a {
     bottom: 20px;
     right: 20px;
     width: 350px;
+    background-color: #FFFFFF; /* White background */
     color: #000;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    display: none;
+    display: flex; /* Visible by default for testing; change to 'none' if needed */
     flex-direction: column;
     max-height: 80%;
     z-index: 1000;
 }
 
 .chatbot-header {
-    color: #000;
+    background-color: #DFFFD6; /* Light green header */
     color: #000;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: bold;
+    border-bottom: 1px solid #A9D18E; /* Slightly darker green border */
 }
 
 .messages {
     padding: 10px;
     overflow-y: auto;
     height: 300px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    background-color: #FFFFFF; /* White background for messages */
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
 }
 
 form {
     display: flex;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #DDD;
+    background-color: #F9F9F9; /* Slightly off-white background */
 }
 
 form input {
     flex: 1;
     padding: 10px;
     border: none;
+    border-right: 1px solid #DDD;
+    background-color: #F9F9F9;
+    color: #000;
 }
 
 form button {
     padding: 10px;
     border: none;
-    color: #000;
-    color: #000;
+    background-color: #A9D18E; /* Light green button */
+    color: #FFFFFF; /* White text */
+    font-weight: bold;
     cursor: pointer;
     transition: background 0.3s;
 }
 
 form button:hover {
-    color: #000;
+    background-color: #87C66B; /* Slightly darker green for hover */
 }
 
 .user, .bot {
     margin: 10px 0;
     padding: 5px;
     border-radius: 5px;
+    font-size: 0.9em;
 }
 
 .user {
+    background-color: #DFFFD6; /* Light green for user messages */
     color: #000;
     align-self: flex-end;
 }
 
 .bot {
-    color: #000;
+    background-color: #F0F0F0; /* Light gray for bot messages */
     color: #000;
 }
+
+/* Chatbot scrollbar styling for better appearance */
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #A9D18E; /* Light green scrollbar thumb */
+    border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background-color: #F0F0F0; /* Light gray scrollbar track */
+}
+/*chatbot end here */
 
 /* Footer styling */
 footer {
     text-align: center;
     padding: 1rem;
     color: #000;
-    color: #000;
+    background-color: #F8F8F8; /* Neutral light gray for footer background */
     position: relative;
     width: 100%;
     bottom: 0;
 }
 
+/* General styling for the home page */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    background-color: #FFFFFF; /* White background for the home page */
+}
+
+/* Responsive styling for the chatbot */
 @media (max-width: 768px) {
     .chatbot {
         width: 100%;
@@ -164,8 +244,11 @@ footer {
         bottom: 0;
         border-radius: 0;
         height: 60%;
+        background-color: #FFFFFF; /* White background for chatbot */
     }
 }
+
+
 
 /* About section styling */
 .about-section {
@@ -175,58 +258,81 @@ footer {
     background-position: center;
     color: #000;
     text-align: center;
+    background-color: #FFFFFF; /* White fallback background */
 }
 
 .about-container {
     color: #000;
     padding: 40px;
     border-radius: 8px;
+    background-color: #F8F8F8; /* Neutral light gray for container */
 }
 
 .about-section h2 {
     font-size: 2em;
     margin-bottom: 10px;
+    color: #000; /* Ensure consistent text color */
 }
 
 .about-section p {
     font-size: 1.2em;
     margin-bottom: 40px;
+    color: #555; /* Neutral dark gray for paragraph text */
 }
 
 .doctor-profiles {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap; /* Allows profiles to wrap on smaller screens */
+    gap: 20px; /* Adds space between cards */
+    justify-content: center; /* Centers the doctor cards */
+    padding: 20px; /* Adds padding around the entire section */
 }
 
 .doctor-card {
-    color: #000;
-    color: #000;
-    border-radius: 8px;
+    background-color: #F8F8F8; /* Light gray background */
+    border-radius: 8px; /* Smooth corners */
     padding: 20px;
-    text-align: center;
-    width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Fixed width for consistency */
+    text-align: center; /* Centers content within each card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .doctor-card img {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    margin-bottom: 15px;
+    border-radius: 50%; /* Makes the image circular */
+    width: 120px; /* Sets a consistent width for images */
+    height: 120px; /* Ensures circular images remain proportional */
+    object-fit: cover; /* Crops the image to fit the circle */
+    margin-bottom: 15px; /* Adds space below the image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
 }
 
 .doctor-card h3 {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Slightly larger font for the name */
     margin-bottom: 10px;
-    color: #000;
+    color: #333; /* Neutral dark gray */
 }
 
 .doctor-card p {
-    font-size: 1em;
-    line-height: 1.5;
+    font-size: 1em; /* Regular font size for description */
+    color: #666; /* Medium gray for description text */
+    line-height: 1.5; /* Improves readability */
 }
+
+/* General styling for the home page */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    background-color: #FFFFFF; /* White background for the home page */
+}
+
 
 /* Services section styling */
 .services-section {
@@ -241,13 +347,14 @@ footer {
     color: #000;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a polished look */
+    background-color: #F8F8F8; /* Neutral light gray background */
 }
 
 .services-section h2 {
     font-size: 2em;
     margin-bottom: 10px;
-    color: #000;
+    color: #333; /* Neutral dark gray for the header */
 }
 
 /* Form input styling */
@@ -255,6 +362,7 @@ footer {
     display: block;
     margin: 10px 0 5px;
     font-weight: bold;
+    color: #555; /* Neutral dark gray for labels */
 }
 
 #medical-history-form input, 
@@ -262,12 +370,12 @@ footer {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    color: #000;
-    color: #000;
+    color: #333; /* Neutral dark gray for text */
     border-radius: 4px;
-    border: 1px solid #ddd;
+    border: 1px solid #DDD; /* Light gray border */
     margin-bottom: 15px;
     box-sizing: border-box;
+    background-color: #FFFFFF; /* White background for inputs */
 }
 
 /* Remove spinners on number inputs */
@@ -284,8 +392,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* Button styling for suggestions */
 #medical-history-form button {
-    color: #000;
-    color: #000;
+    color: #FFF; /* White text */
+    background-color: #888; /* Neutral gray for button */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -295,18 +403,20 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #medical-history-form button:hover {
-    color: #000;
+    background-color: #666; /* Slightly darker gray for hover */
 }
 
 /* Suggestions box styling */
 #suggestions {
     margin-top: 20px;
     padding: 10px;
-    color: #000;
-    border: 1px solid #007BFF;
+    color: #333; /* Neutral dark gray for text */
+    border: 1px solid #CCC; /* Light gray border */
     border-radius: 8px;
     text-align: left;
+    background-color: #F9F9F9; /* Slightly off-white background */
 }
+
 
 
 /* Education Section Styling */
@@ -322,13 +432,14 @@ input[type="number"]::-webkit-inner-spin-button {
     color: #000;
     padding: 30px;
     border-radius: 8px;
+    background-color: #F8F8F8; /* Neutral light gray background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .education-section h2 {
     font-size: 2em;
     margin-bottom: 10px;
-    color: #000;
+    color: #333; /* Neutral dark gray */
 }
 
 .disease-list {
@@ -342,28 +453,29 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .disease-toggle {
     color: #000;
-    color: #000;
+    background-color: #F0F0F0; /* Neutral light gray */
     width: 100%;
     text-align: left;
     padding: 10px;
     font-size: 1em;
-    border: none;
+    border: 1px solid #DDD; /* Light gray border */
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s;
 }
 
 .disease-toggle:hover {
-    color: #000;
+    background-color: #E0E0E0; /* Slightly darker gray on hover */
 }
 
 .disease-info {
     padding: 15px;
-    color: #000;
-    border: 1px solid #007BFF;
+    color: #333; /* Neutral dark gray for text */
+    border: 1px solid #DDD; /* Light gray border */
     border-radius: 8px;
     margin-top: 5px;
     display: none;
+    background-color: #FFFFFF; /* White background */
 }
 
 /* Emergency Hotline Section */
@@ -381,12 +493,13 @@ input[type="number"]::-webkit-inner-spin-button {
     color: #000;
     padding: 30px;
     border-radius: 8px;
+    background-color: #F8F8F8; /* Neutral light gray background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hotline-section h2 {
     font-size: 2em;
-    color: #000;
+    color: #333; /* Neutral dark gray */
     margin-bottom: 10px;
 }
 
@@ -399,6 +512,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .hotline-item {
     color: #000;
+    background-color: #F9F9F9; /* Neutral light gray for items */
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -407,8 +521,8 @@ input[type="number"]::-webkit-inner-spin-button {
 .hotline-toggle {
     width: 100%;
     color: #000;
-    color: #000;
-    border: none;
+    background-color: #F0F0F0; /* Neutral light gray */
+    border: 1px solid #DDD; /* Light gray border */
     padding: 10px;
     font-size: 1em;
     text-align: left;
@@ -419,19 +533,22 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .hotline-toggle:hover {
-    color: #000;
+    background-color: #E0E0E0; /* Slightly darker gray on hover */
 }
 
 .hotline-info {
     display: none;
     margin-top: 10px;
     font-size: 0.9em;
-    color: #000;
+    color: #333; /* Neutral dark gray */
+    background-color: #FFFFFF; /* White background */
 }
 
+/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
+
 
 /* Contact Section */
 .contact-section {
@@ -557,9 +674,11 @@ header nav ul li a:hover {
 }
 
 /* Hero section styling */
+
 .hero {
-    background-color: #f0f0f0;
-    background: linear-gradient(135deg, #007BFF, #00C6FF); /* Blue gradient */
+   
+    background-image: url('/images/back2.jpg'); /* Path to your image */
+    /* Blue gradient */
     color: #000;
     padding: 4rem;
     text-align: center;
@@ -796,8 +915,8 @@ footer {
 .contact-section {
     padding: 60px 20px;
     color: #000;
-    color: #000;
     text-align: center;
+    background-color: #FFFFFF; /* White background for the contact section */
 }
 
 .contact-container {
@@ -806,12 +925,13 @@ footer {
     color: #000;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: #F8F8F8; /* Neutral light gray background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .contact-section h2 {
     font-size: 2em;
-    color: #000;
+    color: #333; /* Neutral dark gray for header text */
 }
 
 /* Styling for form inputs to ensure visibility */
@@ -820,29 +940,52 @@ input[type="text"],
 textarea {
     padding: 10px;
     font-size: 16px;
-    color: #000;
-    color: #000;
-    border: 1px solid #00bfff;
+    color: #333; /* Neutral dark gray for text */
+    border: 1px solid #DDD; /* Light gray border */
     border-radius: 4px;
     width: 100%;
     box-sizing: border-box;
+    background-color: #FFFFFF; /* White background for inputs */
 }
+
+/* Divider under tabs */
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #DDD; /* Divider under tabs */
+    margin-bottom: 10px;
+}
+
+/* Lifestyle, Suggestions, and Daily Health Recommendations */
+.lifestyleSuggestions, 
+.daily-recommendations-container {
+    border: 1px solid #DDD; /* Light gray border */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for boxed appearance */
+    margin-top: 20px;
+    background-color: #F9F9F9; /* Neutral off-white background */
+}
+
 
 /* Personalized Lifestyle and Meal Suggestions Section */
 .services-section {
     padding: 60px 20px;
     color: #000;
     text-align: center;
-    color: #000;
+    background-color: #FFFFFF; /* White background for the home page */
 }
 
 .services-container {
     max-width: 800px;
     margin: 0 auto;
-    color: #000;
+    color: #333; /* Neutral dark gray for text */
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: #F8F8F8; /* Neutral light gray background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 /* Styling for form inputs to ensure visibility and alignment */
@@ -857,7 +1000,7 @@ textarea {
 #medical-history-form label {
     flex: 1 1 100%; /* Labels take full width */
     font-weight: bold;
-    color: #000;
+    color: #555; /* Neutral dark gray for labels */
     text-align: left;
     margin-top: 10px;
 }
@@ -867,96 +1010,120 @@ textarea {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    color: #000;
-    color: #000;
+    color: #333; /* Neutral dark gray for text */
     border-radius: 4px;
-    border: 1px solid #00bfff; /* Blue border */
+    border: 1px solid #DDD; /* Light gray border */
     box-sizing: border-box;
+    background-color: #FFFFFF; /* White background for inputs */
 }
 
 /* Button styling for getting suggestions */
 #medical-history-form button {
-    color: #000;
-    color: #000;
+    color: #FFF; /* White text */
+    background-color: #888; /* Neutral gray for button */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
     width: 100%; /* Full width for button */
     margin-top: 15px;
 }
 
 #medical-history-form button:hover {
-    color: #000;
+    background-color: #666; /* Slightly darker gray on hover */
 }
 
 /* Suggestions box styling */
 #suggestions {
     margin-top: 20px;
     padding: 15px;
-    color: #000;
-    border: 1px solid #00bfff;
+    color: #333; /* Neutral dark gray for text */
+    border: 1px solid #DDD; /* Light gray border */
     border-radius: 8px;
-    color: #000;
     text-align: left;
+    background-color: #F9F9F9; /* Slightly off-white background */
 }
 
+/* Divider under tabs */
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #DDD; /* Divider under tabs */
+    margin-bottom: 10px;
+}
+
+/* Box styling for Lifestyle, Suggestions, and Daily Health Recommendations */
+.lifestyleSuggestions, 
+.daily-recommendations-container {
+    border: 1px solid #DDD; /* Light gray border */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #F9F9F9; /* Slightly off-white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for boxed appearance */
+    margin-top: 20px;
+}
+
+
+/* Health Tracker Section */
 /* Health Tracker Section */
 .health-tracker-section {
     padding: 60px 20px;
     color: #000;
-    color: #000;
     text-align: center;
+    background-color: #FFFFFF; /* White background for the home page */
 }
 
 .health-tracker-container {
     max-width: 800px;
     margin: 0 auto;
-    color: #000;
+    color: #333; /* Neutral dark gray for text */
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: #F8F8F8; /* Neutral light gray background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .health-tracker-container h2 {
-    color: #000;
+    color: #333; /* Neutral dark gray for header text */
     margin-bottom: 20px;
 }
 
 #health-tracker-form label {
     display: block;
     margin-top: 10px;
-    color: #000;
+    color: #555; /* Neutral medium gray for labels */
 }
 
 #health-tracker-form input {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    color: #000;
-    color: #000;
-    border: 1px solid #00bfff;
+    color: #333; /* Neutral dark gray for input text */
+    border: 1px solid #DDD; /* Light gray border */
     border-radius: 4px;
     box-sizing: border-box;
+    background-color: #FFFFFF; /* White background for inputs */
 }
 
 #health-tracker-form button {
     margin-top: 15px;
     padding: 10px 20px;
-    color: #000;
-    color: #000;
+    color: #FFF; /* White text */
+    background-color: #888; /* Neutral gray for button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
     width: 100%;
     font-weight: bold;
 }
 
 #health-tracker-form button:hover {
-    color: #000;
+    background-color: #666; /* Slightly darker gray on hover */
 }
 
 .health-log {
@@ -968,37 +1135,48 @@ textarea {
 .health-log th,
 .health-log td {
     padding: 10px;
-    border: 1px solid #00bfff;
+    border: 1px solid #DDD; /* Light gray border */
     text-align: center;
 }
 
 .health-log th {
-    color: #000;
-    color: #000;
+    color: #333; /* Neutral dark gray for table headers */
 }
 
 .health-log td {
-    color: #000;
-    color: #000;
+    color: #333; /* Neutral dark gray for table data */
 }
 
+/* Divider under tabs */
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #DDD; /* Divider under tabs */
+    margin-bottom: 10px;
+}
+
+/* Box styling for Lifestyle, Suggestions, and Daily Health Recommendations */
+.lifestyleSuggestions, 
+.daily-recommendations-container {
+    border: 1px solid #DDD; /* Light gray border */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #F9F9F9; /* Neutral off-white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for boxed appearance */
+    margin-top: 20px;
+}
+
+
 .advisory-section {
-    /*padding: 20px;
+    padding: 20px;
     color: #000;
     color: #000;
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
-    width: 706px;*/
-    padding: 60px 20px;
-    color: #000;
-    color: #000;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    margin-left: 60px;
-    margin-right: 60px;
 }
 
 .advisory-container label {
@@ -1016,8 +1194,6 @@ textarea {
     border: 1px solid #00bfff;
     border-radius: 4px;
     margin-bottom: 10px;
-    width: 706px;
-    
 }
 
 #recommendations {
@@ -1105,12 +1281,13 @@ textarea {
 }
 
 /* Form input styling */
+/* Form input styling */
 #booking-form label {
     display: block;
     text-align: left;
     margin: 10px 0 5px;
     font-weight: bold;
-    color: #000;
+    color: #333; /* Neutral dark gray for labels */
 }
 
 #booking-form input,
@@ -1118,29 +1295,40 @@ textarea {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    color: #000;
-    color: #000;
+    color: #333; /* Neutral dark gray for text */
     border-radius: 4px;
-    border: 1px solid #00bfff; /* Light blue border */
+    border: 1px solid #A9D18E; /* Light green border */
     margin-bottom: 15px;
     box-sizing: border-box;
+    background-color: #F9FFF0; /* Very light green background */
 }
 
 #booking-form button {
-    color: #000;
-    color: #000;
+    color: #FFF; /* White text */
+    background-color: #A9D18E; /* Light green for button */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
     width: 100%; /* Full width button */
     margin-top: 10px;
 }
 
 #booking-form button:hover {
-    color: #000;
+    background-color: #87C66B; /* Slightly darker green on hover */
+}
+
+/* Confirmation message styling */
+.confirmation-message {
+    margin-top: 20px;
+    padding: 15px;
+    color: #333; /* Neutral dark gray */
+    background-color: #EAF7E1; /* Very light green background for confirmation */
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px solid #A9D18E; /* Light green border */
 }
 
 /* Confirmation message styling */
@@ -1153,24 +1341,25 @@ textarea {
     font-weight: bold;
 }
 
-/* Dark Mode for User Authentication and Dashboard */
+/* Gray Mode for User Authentication and Dashboard */
 body {
-    color: #000;
-    color: #000;
+    color: #333; /* Neutral dark gray for body text */
     font-family: 'Roboto', sans-serif;
+    background-color: #F0F0F0; /* Light gray background for the page */
 }
 
 #auth-section, #dashboard {
     padding: 20px;
     max-width: 500px;
     margin: auto;
-    color: #000;
+    color: #333; /* Neutral dark gray for text */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: #FFFFFF; /* White background for sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for sections */
 }
 
 h2, h3 {
-    color: #000;
+    color: #555; /* Medium gray for headings */
 }
 
 form {
@@ -1181,56 +1370,32 @@ form {
 input[type="text"], input[type="password"] {
     padding: 8px;
     margin: 5px 0;
-    border: 1px solid #333333; /* Darker border */
-    color: #000;
-    color: #000;
+    border: 1px solid #CCC; /* Light gray border */
+    color: #333; /* Neutral dark gray for text */
     border-radius: 4px;
+    background-color: #F9F9F9; /* Very light gray background */
 }
 
 input[type="text"]::placeholder,
 input[type="password"]::placeholder {
-    color: #000;
+    color: #888; /* Medium gray for placeholder text */
 }
 
 button {
-    color: #000;
-    color: #000;
+    color: #FFF; /* White text */
+    background-color: #888; /* Medium gray for button */
     padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    color: #000;
+    background-color: #666; /* Darker gray on hover */
 }
 
-/* Styling for history and recommendations sections */
-.dashboard-content {
-    padding-top: 10px;
-}
-
-#history, #recommendations {
-    color: #000;
-    padding: 10px;
-    border-radius: 4px;
-    margin-top: 10px;
-    color: #000;
-}
-
-p {
-    color: #000;
-}
-
-a {
-    color: #000;
-}
-
-a:hover {
-    color: #000;
-}
 
 /* Toggle switch styling */
 .toggle-container {
@@ -1261,7 +1426,7 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    color: #000;
+    background-color: #DDD; /* Neutral light gray background */
     transition: 0.4s;
     border-radius: 34px;
 }
@@ -1273,44 +1438,54 @@ a:hover {
     width: 20px;
     left: 4px;
     bottom: 2px;
-    color: #000;
+    background-color: #FFF; /* White toggle */
     transition: 0.4s;
     border-radius: 50%;
 }
 
 input:checked + .slider {
-    color: #000;
+    background-color: #888; /* Neutral gray for active state */
 }
 
 input:checked + .slider:before {
     transform: translateX(26px);
 }
 
+/* General styling for home page */
+body {
+    background-color: #FFFFFF; /* White background for the home page */
+    color: #333; /* Neutral dark gray for text */
+    font-family: 'Roboto', sans-serif;
+}
+
 /* Daily Health Recommendations Section */
+/* Daily Recommendations Section */
 .daily-recommendations-section {
     padding: 40px 20px; /* Adjust padding to make it more compact */
-    color: #000;
+    color: #333; /* Neutral dark gray */
     text-align: center;
-    color: #000;
+    background-color: #FFFFFF; /* White background for the home page */
 }
 
 .daily-recommendations-container {
     max-width: 600px; /* Reduce width to make it compact */
     margin: 0 auto;
-    color: #000;
+    color: #333; /* Neutral dark gray for text */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #F8F8F8; /* Light gray background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .daily-recommendations-section h2 {
     font-size: 1.8em; /* Adjust title size */
     margin-bottom: 10px;
+    color: #555; /* Medium gray for headings */
 }
 
 .daily-recommendations-section p {
     font-size: 1em; /* Adjust subtitle text size */
-    color: #000;
+    color: #666; /* Medium gray for subtitle text */
     margin-bottom: 20px;
 }
 
@@ -1319,43 +1494,49 @@ input:checked + .slider:before {
     padding: 8px;
     font-size: 0.9em;
     border-radius: 4px;
-    border: 1px solid #00bfff;
-    color: #000;
-    color: #000;
+    border: 1px solid #DDD; /* Light gray border */
+    color: #333; /* Neutral dark gray for text */
+    background-color: #FFFFFF; /* White background for input */
 }
 
 #get-recommendations {
     padding: 8px 15px;
     font-size: 0.9em; /* Smaller button text */
-    color: #000;
-    color: #000;
+    color: #FFF; /* White text */
+    background-color: #888; /* Neutral gray button */
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
     margin-left: 10px;
+    transition: background-color 0.3s ease;
 }
 
 #get-recommendations:hover {
-    color: #000;
+    background-color: #666; /* Darker gray for hover effect */
 }
 
-/* Recommendation output styling */
+/* Recommendation Output Styling */
 #recommendation-output {
     margin-top: 20px;
     padding: 15px;
     font-size: 0.9em;
-    color: #000;
+    color: #333; /* Neutral dark gray */
     border-radius: 8px;
-    color: #000;
-    border: 1px solid #00bfff;
+    background-color: #F9F9F9; /* Slightly off-white background */
+    border: 1px solid #DDD; /* Light gray border */
     text-align: left;
 }
 
+/* Search Bar Styling */
 #search-bar {
     padding: 8px;
     width: 200px;
     margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #DDD; /* Light gray border */
+    color: #333; /* Neutral dark gray */
+    background-color: #FFFFFF; /* White background for search bar */
 }
 
 .education-item {
@@ -1363,32 +1544,10 @@ input:checked + .slider:before {
     margin: 10px 0;
 }
 
+/* Lifestyle Suggestions Box Styling */
 .lifestyleSuggestions {
-    margin-bottom: 60px;
-    margin-left: 60px;
-    margin-right: 60px;
-    display: block;
-    padding-bottom: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 60px;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: #F8F8F8; /* Light gray background */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for boxed appearance */
 }
-
-.advisory-section2 {
-    margin-bottom: 60px;
-    margin-left: 10px;
-    margin-right: 10px;
-    display: block;
-    padding-bottom: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 60px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-
-}
-
