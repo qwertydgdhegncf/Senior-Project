@@ -1170,13 +1170,14 @@ header nav ul {
 
 
 .advisory-section {
-    padding: 20px;
+    padding: 60px 20px;
     color: #000;
     color: #000;
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 .advisory-container label {
@@ -1194,6 +1195,7 @@ header nav ul {
     border: 1px solid #00bfff;
     border-radius: 4px;
     margin-bottom: 10px;
+    width: 706px;
 }
 
 #recommendations {
@@ -1544,10 +1546,31 @@ body {
     margin: 10px 0;
 }
 
-/* Lifestyle Suggestions Box Styling */
 .lifestyleSuggestions {
+    margin-bottom: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    display: block;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 60px;
     padding: 20px;
     border-radius: 8px;
-    background-color: #F8F8F8; /* Light gray background */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for boxed appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.advisory-section2 {
+    margin-bottom: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 60px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
 }
