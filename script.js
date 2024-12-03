@@ -377,3 +377,5 @@ function openTab(section) {
         console.error("Section not found: " + section);
     }
 }
+
+
