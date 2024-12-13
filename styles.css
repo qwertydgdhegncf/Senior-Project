@@ -123,7 +123,7 @@ button:hover {
     bottom: 20px;
     right: 20px;
     width: 350px;
-    background-color: #FFFFFF; /* White background */
+    background-color: #EAF6FF; /* Light blue marble background */
     color: #000;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -135,44 +135,44 @@ button:hover {
 }
 
 .chatbot-header {
-    background-color: #DFFFD6; /* Light green header */
+    background-color: #D6EBFF; /* Soft blue header */
     color: #000;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    border-bottom: 1px solid #A9D18E; /* Slightly darker green border */
+    border-bottom: 1px solid #B3D7FF; /* Slightly darker blue border */
 }
 
 .messages {
     padding: 10px;
     overflow-y: auto;
     height: 300px;
-    background-color: #FFFFFF; /* White background for messages */
-    border-top: 1px solid #DDD;
-    border-bottom: 1px solid #DDD;
+    background-color: #EAF6FF; /* Light blue marble for messages background */
+    border-top: 1px solid #B3D7FF;
+    border-bottom: 1px solid #B3D7FF;
 }
 
 form {
     display: flex;
-    border-top: 1px solid #DDD;
-    background-color: #F9F9F9; /* Slightly off-white background */
+    border-top: 1px solid #B3D7FF;
+    background-color: #F0F7FF; /* Slightly lighter blue for form background */
 }
 
 form input {
     flex: 1;
     padding: 10px;
     border: none;
-    border-right: 1px solid #DDD;
-    background-color: #F9F9F9;
+    border-right: 1px solid #B3D7FF;
+    background-color: #F0F7FF;
     color: #000;
 }
 
 form button {
     padding: 10px;
     border: none;
-    background-color: #A9D18E; /* Light green button */
+    background-color: #A6CFFF; /* Light blue button */
     color: #FFFFFF; /* White text */
     font-weight: bold;
     cursor: pointer;
@@ -180,7 +180,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #87C66B; /* Slightly darker green for hover */
+    background-color: #8EB8FF; /* Slightly darker blue for hover */
 }
 
 .user, .bot {
@@ -191,13 +191,13 @@ form button:hover {
 }
 
 .user {
-    background-color: #DFFFD6; /* Light green for user messages */
+    background-color: #D6EBFF; /* Light blue for user messages */
     color: #000;
     align-self: flex-end;
 }
 
 .bot {
-    background-color: #F0F0F0; /* Light gray for bot messages */
+    background-color: #F0F7FF; /* Even lighter blue for bot messages */
     color: #000;
 }
 
@@ -207,13 +207,14 @@ form button:hover {
 }
 
 .messages::-webkit-scrollbar-thumb {
-    background-color: #A9D18E; /* Light green scrollbar thumb */
+    background-color: #A6CFFF; /* Light blue scrollbar thumb */
     border-radius: 10px;
 }
 
 .messages::-webkit-scrollbar-track {
-    background-color: #F0F0F0; /* Light gray scrollbar track */
+    background-color: #F0F7FF; /* Very light blue scrollbar track */
 }
+
 /*chatbot end here */
 
 /* Footer styling */
@@ -249,36 +250,325 @@ body {
 }
 
 
-
-/* About section styling */
+/* Style for the About Section with Light Blue Background */
 .about-section {
     padding: 60px 20px;
-    background-image: url('https://images.unsplash.com/photo-1603398938378-68fe5a82b4c9'); /* Stethoscope and hospital background */
-    background-size: cover;
-    background-position: center;
-    color: #000;
+    background-color: #e0f7ff; /* Solid light blue background */
+    color: #000; /* Black text color for readability */
     text-align: center;
-    background-color: #FFFFFF; /* White fallback background */
+    height: 100vh; /* Makes the section fill the entire viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Feedback Section Styling */
+/* Feedback Section */
+.feedback-list {
+    position: relative;
+    margin-top: 30px;
+    background-color: #e6f7ff; /* Light blue background */
+    padding: 40px 20px; /* Reduced padding for the section */
+    border-radius: 16px; /* Rounded corners for the section */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for the section */
+}
+
+/* Feedback Box Styling */
+.feedback-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff; /* White background for individual feedback boxes */
+    border-radius: 16px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Reduced padding for smaller box */
+    width: 80%; /* Reduced width */
+    margin: 0 auto; /* Center the feedback box */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.feedback-item-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Reduced gap */
+    flex: 1; /* Flex size for layout balancing */
+}
+
+.feedback-item-right {
+    text-align: left;
+    color: #333333;
+    font-size: 14px; /* Reduced font size */
+    line-height: 1.4; /* Adjusted line height */
+    flex: 2; /* Flex size for layout balancing */
+}
+
+/* Image Styling */
+.feedback-item .item-img {
+    width: 80px; /* Reduced size */
+    height: 80px; /* Reduced size */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ffffff; /* Reduced border thickness */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-item .item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feedback-item .item-info {
+    text-align: center;
+}
+
+.feedback-item .name {
+    font-size: 16px; /* Reduced font size */
+    font-weight: bold;
+    color: #000000;
+}
+
+.feedback-item .designation {
+    font-size: 12px; /* Reduced font size */
+    color: #666666;
+}
+
+/* Navigation Arrows */
+.feedback-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.feedback-arrows button {
+    background: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 40px; /* Reduced size */
+    height: 40px; /* Reduced size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.feedback-arrows button:hover {
+    background: #666666;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.feedback-arrows button i {
+    font-size: 16px; /* Reduced size */
+    color: #666666;
+}
+
+.feedback-arrows button:hover i {
+    color: #ffffff;
+}
+
+
+
+/* Articles List */
+/* Articles Section */
+.sc-articles {
+    padding: 60px 0;
+    background-color: #e6f7ff; /* Light blue background */
+    position: relative;
+}
+
+.title-box-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.title-separator {
+    width: 200px; /* Increased width for a longer line */
+    height: 3px;
+    background-color: #000000;
+    margin: 10px auto;
+}
+
+/* Title Box Styling */
+.title-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center;
+    height: 150px; /* Adjust height to vertically center the content */
+    margin-bottom: 30px; /* Space below the title */
+}
+
+.title-box-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000; /* Black color for the title */
+    margin: 0;
+}
+
+/* Articles List */
+.articles-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Gap between articles */
+}
+
+/* Article Item */
+.articles-item {
+    width: calc(33.333% - 20px); /* Responsive three-column layout */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.articles-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+.articles-item .item-img {
+    width: 100%;
+    height: 180px; /* Fixed height for uniformity */
+    overflow: hidden;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.articles-item .item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Article Body */
+.articles-item .item-body {
+    padding: 15px;
+    text-align: left;
+}
+
+.articles-item .item-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.articles-item .text {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* Read More Link */
+.articles-item .item-link {
+    font-size: 14px;
+    font-weight: bold;
+    color: #0056b3;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.articles-item .item-link:hover {
+    color: #003366;
+}
+
+.articles-item .item-link-icon {
+    margin-left: 5px;
+}
+
+.articles-item .item-link-icon i {
+    font-size: 14px;
+}
+
+/* Doctor Profiles Styling */
+.doctor-profiles {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap; /* Makes the layout responsive */
+}
+
+.doctor-card {
+    text-align: center;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    transition: transform 0.2s ease-in-out;
+}
+
+.doctor-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.doctor-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes images circular */
+    margin-bottom: 10px;
+}
+
+.doctor-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #4a4a4a; /* Neutral dark gray */
+}
+
+.doctor-card p {
+    font-size: 1em;
+    color: #555; /* Neutral gray for descriptions */
+}
+
+.about-section {
+    padding: 60px 20px;
+    background-color: #e6f7ff; /* Fallback solid light blue background */
+    background-image: linear-gradient(rgba(230, 247, 255, 0.9), rgba(230, 247, 255, 0.9)), 
+                      url('images/about_back\ .jpg'); /* Add your light blue background image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    color: #000; /* Black text color for readability */
+    text-align: center;
+    height: 100vh; /* Makes the section fill the entire viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-container {
-    color: #000;
+    color: #000; /* Black text for contrast */
     padding: 40px;
     border-radius: 8px;
-    background-color: #F8F8F8; /* Neutral light gray for container */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for content */
+    max-width: 800px;
+    text-align: left;
 }
 
-.about-section h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #000; /* Ensure consistent text color */
-}
 
-.about-section p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    color: #555; /* Neutral dark gray for paragraph text */
-}
+
+
+
+
+
 
 .doctor-profiles {
     display: flex;
@@ -420,10 +710,31 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 /* Education Section Styling */
+.banner {
+    position: fixed; /* Fixes the image to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('/images/back2.jpg'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    z-index: -1; /* Moves the background behind all content */
+}
 .education-section {
     padding: 60px 20px;
     color: #000;
     text-align: center;
+
+    /* Add background image */
+    background-image: url('images/about_back\ .jpg'); /* Replace with your actual image path */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Creates a parallax scrolling effect */
+    background-color: #F8F8F8; /* Fallback light gray color */
+    position: relative; /* Ensures proper stacking of elements */
 }
 
 .education-container {
@@ -432,7 +743,7 @@ input[type="number"]::-webkit-inner-spin-button {
     color: #000;
     padding: 30px;
     border-radius: 8px;
-    background-color: #F8F8F8; /* Neutral light gray background */
+    background-color: rgba(248, 248, 248, 0.9); /* Semi-transparent light gray */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -441,6 +752,8 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-bottom: 10px;
     color: #333; /* Neutral dark gray */
 }
+
+
 
 .disease-list {
     text-align: left;
@@ -551,10 +864,19 @@ html {
 
 
 /* Contact Section */
+/* Contact Section */
 .contact-section {
     padding: 60px 20px;
     color: #000;
     text-align: center;
+
+    /* Add background image */
+    background-image: url('images/about_back\ .jpg'); /* Replace with your actual image path */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Optional: Creates a parallax scrolling effect */
+    background-color: #F9F9F9; /* Fallback color in case the image fails to load */
 }
 
 .contact-container {
@@ -563,6 +885,7 @@ html {
     color: #000;
     padding: 30px;
     border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for better readability */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -583,7 +906,7 @@ html {
 
 #show-contacts {
     color: #000;
-    color: #000;
+    background-color: #E8F4FF; /* Light blue background for the button */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -593,7 +916,7 @@ html {
 }
 
 #show-contacts:hover {
-    color: #000;
+    background-color: #cce7ff; /* Slightly darker blue on hover */
 }
 
 .hotline-info {
@@ -602,6 +925,8 @@ html {
     font-size: 0.9em;
     color: #000;
 }
+
+
 
 /* Styling for form inputs to ensure visibility */
 input[type="number"],
@@ -760,40 +1085,50 @@ footer {
 /* About section styling */
 .about-section {
     padding: 60px 20px;
-    color: #000;
-    color: #000;
+    color: #000; /* Black text for readability */
     text-align: center;
-    background-image: url('https://images.unsplash.com/photo-1603398938378-68fe5a82b4c9');
-    background-size: cover;
-    background-position: center;
+
+    /* Light blue solid background */
+    background-color: #dceeff; /* Light blue color */
+
+    /* Optional: Add a soft gradient for visual interest */
+    background: linear-gradient(135deg, #dceeff, #b3e5fc); /* Gradient from light blue to soft blue */
+
+    background-size: cover; /* Ensures the gradient covers the entire section */
+    background-position: center; /* Centers the gradient */
 }
 
 .about-container {
-    color: #000;
+    color: #000; /* Black text for readability */
     padding: 40px;
-    border-radius: 8px;
+    border-radius: 8px; /* Smooth rounded corners */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white to highlight the content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 800px; /* Restricts the content width */
+    text-align: left; /* Aligns content to the left inside the container */
 }
 
 .about-section h2 {
     font-size: 2em;
     margin-bottom: 10px;
-    color: #000;
+    color: #000; /* Black color for the heading */
 }
 
 .doctor-card {
-    color: #000;
-    color: #000;
-    border-radius: 8px;
+    color: #000; /* Black text for readability */
+    border-radius: 8px; /* Smooth rounded corners */
     padding: 20px;
     text-align: center;
-    width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 250px; /* Fixed width for uniform cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for card depth */
+    background-color: #ffffff; /* White background for the card */
 }
 
 .doctor-card h3 {
     font-size: 1.5em;
-    color: #000;
+    color: #000; /* Black color for the text */
 }
+
 
 /* Services section styling */
 .services-section {
@@ -957,35 +1292,34 @@ header nav ul {
     border-bottom: 1px solid #DDD; /* Divider under tabs */
     margin-bottom: 10px;
 }
-
-/* Lifestyle, Suggestions, and Daily Health Recommendations */
-.lifestyleSuggestions, 
-.daily-recommendations-container {
-    border: 1px solid #DDD; /* Light gray border */
+.lifestyleSuggestions {
+    margin-bottom: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    display: block;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 60px;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for boxed appearance */
-    margin-top: 20px;
-    background-color: #F9F9F9; /* Neutral off-white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
-
-
 /* Personalized Lifestyle and Meal Suggestions Section */
 .services-section {
     padding: 60px 20px;
     color: #000;
     text-align: center;
-    background-color: #FFFFFF; /* White background for the home page */
+    color: #000;
 }
 
 .services-container {
     max-width: 800px;
     margin: 0 auto;
-    color: #333; /* Neutral dark gray for text */
+    color: #000;
     padding: 30px;
     border-radius: 8px;
-    background-color: #F8F8F8; /* Neutral light gray background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Styling for form inputs to ensure visibility and alignment */
@@ -1057,6 +1391,7 @@ header nav ul {
 }
 
 /* Box styling for Lifestyle, Suggestions, and Daily Health Recommendations */
+
 .lifestyleSuggestions, 
 .daily-recommendations-container {
     border: 1px solid #DDD; /* Light gray border */
@@ -1068,7 +1403,7 @@ header nav ul {
 }
 
 
-/* Health Tracker Section */
+
 /* Health Tracker Section */
 .health-tracker-section {
     padding: 60px 20px;
@@ -1157,55 +1492,43 @@ header nav ul {
     margin-bottom: 10px;
 }
 
-/* Box styling for Lifestyle, Suggestions, and Daily Health Recommendations */
-.lifestyleSuggestions, 
-.daily-recommendations-container {
-    border: 1px solid #DDD; /* Light gray border */
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #F9F9F9; /* Neutral off-white background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for boxed appearance */
-    margin-top: 20px;
-}
-
-
-.advisory-section {
-    padding: 60px 20px;
-    color: #000;
-    color: #000;
+.checkbox-custom {
+    opacity: 0;
+    position: absolute;
+  }
+  .checkbox-custom,
+  .checkbox-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+  }
+  .checkbox-custom + .checkbox-custom-label:before {
+    content: '';
+    display: inline-block;
+    background: #fff;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+    padding: 2px;
+    margin-right: 10px;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    margin-left: 60px;
-    margin-right: 60px;
-}
+  }
+  .checkbox-custom:checked + .checkbox-custom-label:before {
+    width: 1px;
+    height: 5px;
+    border: solid blue;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    border-radius: 0px;
+    margin: 0px 15px 5px 5px;
+  }
+  
 
-.advisory-container label {
-    display: block;
-    margin: 10px 0;
-    font-weight: bold;
-    color: #000;
-}
-
-#advisory-section input {
-    padding: 10px;
-    font-size: 16px;
-    color: #000;
-    color: #000;
-    border: 1px solid #00bfff;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    width: 706px;
-}
-
-#recommendations {
-    margin-top: 20px;
-    color: #000;
-    padding: 15px;
-    border-radius: 8px;
-    color: #000;
-    min-height: 50px;
-}
 
 /* Tab section styling */
 .tab-section {
@@ -1258,7 +1581,6 @@ header nav ul {
 .consultation-section {
     padding: 60px 20px;
     color: #000;
-    color: #000;
     text-align: center;
 }
 
@@ -1268,7 +1590,8 @@ header nav ul {
     color: #000;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    background-color: #ffffff; /* White background for the container */
 }
 
 .consultation-section h2 {
@@ -1282,7 +1605,6 @@ header nav ul {
     margin-bottom: 20px;
 }
 
-/* Form input styling */
 /* Form input styling */
 #booking-form label {
     display: block;
@@ -1299,15 +1621,15 @@ header nav ul {
     font-size: 16px;
     color: #333; /* Neutral dark gray for text */
     border-radius: 4px;
-    border: 1px solid #A9D18E; /* Light green border */
+    border: 1px solid #cce7ff; /* Light blue border */
     margin-bottom: 15px;
     box-sizing: border-box;
-    background-color: #F9FFF0; /* Very light green background */
+    background-color: #f4faff; /* Very light blue background */
 }
 
 #booking-form button {
     color: #FFF; /* White text */
-    background-color: #A9D18E; /* Light green for button */
+    background-color: #87C6FF; /* Light blue for button */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -1319,8 +1641,9 @@ header nav ul {
 }
 
 #booking-form button:hover {
-    background-color: #87C66B; /* Slightly darker green on hover */
+    background-color: #559de6; /* Slightly darker blue on hover */
 }
+
 
 /* Confirmation message styling */
 .confirmation-message {
@@ -1462,34 +1785,79 @@ body {
 
 /* Daily Health Recommendations Section */
 /* Daily Recommendations Section */
-.daily-recommendations-section {
-    padding: 40px 20px; /* Adjust padding to make it more compact */
-    color: #333; /* Neutral dark gray */
-    text-align: center;
-    background-color: #FFFFFF; /* White background for the home page */
+/* Daily Recommendations Section */
+.advisory-section {
+    background-color: #f8f9fa; /* Light background */
+    padding: 60px 20px; /* Padding for spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.daily-recommendations-container {
-    max-width: 600px; /* Reduce width to make it compact */
-    margin: 0 auto;
-    color: #333; /* Neutral dark gray for text */
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #F8F8F8; /* Light gray background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+/* Box Container */
+.advisory-container {
+    background-color: #ffffff; /* White box */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    padding: 30px; /* Inner padding */
+    max-width: 800px; /* Width limit */
+    width: 100%; /* Full width responsiveness */
+    text-align: center; /* Center-align the content */
 }
 
-.daily-recommendations-section h2 {
-    font-size: 1.8em; /* Adjust title size */
-    margin-bottom: 10px;
-    color: #555; /* Medium gray for headings */
+/* Heading Styling */
+.advisory-container h1 {
+    font-size: 1.8em; /* Slightly smaller title */
+    color: #333333; /* Darker text for heading */
+    margin-bottom: 20px; /* Spacing below the title */
 }
 
-.daily-recommendations-section p {
-    font-size: 1em; /* Adjust subtitle text size */
-    color: #666; /* Medium gray for subtitle text */
-    margin-bottom: 20px;
+/* Description Styling */
+.advisory-container p {
+    font-size: 1em; /* Standard text size */
+    color: #555555; /* Gray text */
+    margin-bottom: 20px; /* Spacing below paragraph */
 }
+
+/* Input Field Styling */
+.advisory-container input[type="number"] {
+    width: 80%; /* Responsive width */
+    padding: 10px; /* Input padding */
+    font-size: 0.9em; /* Slightly smaller font size */
+    border: 1px solid #cccccc; /* Light border */
+    border-radius: 6px; /* Rounded corners */
+    margin-bottom: 20px; /* Space below input */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow */
+}
+
+/* Button Styling */
+.advisory-container button {
+    background-color: #1e90ff; /* Bright blue background */
+    color: #ffffff; /* White text */
+    padding: 12px 20px; /* Button padding */
+    font-size: 0.9em; /* Slightly smaller font size */
+    border: none; /* Remove border */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.advisory-container button:hover {
+    background-color: #4682b4; /* Slightly darker bright blue on hover */
+}
+
+/* Recommendations Box */
+.recommendations {
+    margin-top: 20px; /* Space above recommendations */
+    background-color: #f8f8f8; /* Light gray background for recommendations */
+    padding: 20px; /* Padding inside recommendations box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 0.9em; /* Slightly smaller text size */
+    color: #333333; /* Dark gray text */
+    text-align: left; /* Left-align text for readability */
+}
+
 
 #age-input {
     width: 60%; /* Narrower input field */
@@ -1547,18 +1915,16 @@ body {
 }
 
 .lifestyleSuggestions {
-    margin-bottom: 60px;
-    margin-left: 60px;
-    margin-right: 60px;
-    display: block;
-    padding-bottom: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 60px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 60px auto; /* Center the box horizontally and add space above/below */
+    max-width: 800px; /* Limit the width for a clean, boxy look */
+    padding: 40px; /* Add equal padding inside the box */
+    display: block; /* Ensure it behaves like a block element */
+    background-color: #fff; /* Add a white background for a card-like effect */
+    border-radius: 10px; /* Rounded corners for the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border: 1px solid #ddd; /* Light border for definition */
 }
+
 
 .advisory-section2 {
     margin-bottom: 60px;
