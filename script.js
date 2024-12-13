@@ -243,6 +243,8 @@ function generateSuggestions() {
         thyroidDisease: document.getElementById('thyroidDisease').checked,
         migraineHeadaches: document.getElementById('migraineHeadaches').checked,
         stroke: document.getElementById('stroke').checked
+        
+
     };
 
     let suggestions = "";
@@ -377,5 +379,3 @@ function openTab(section) {
         console.error("Section not found: " + section);
     }
 }
-
-
