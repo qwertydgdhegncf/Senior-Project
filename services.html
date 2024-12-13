@@ -23,79 +23,128 @@
         </div>
     </header>
 
-<div class="lifestyleSuggestions">
-    <h1>Lifestyle & Food Suggestions</h1>
-    <form id="userForm">
-        <label for="gender">Gender:</label>
-        <select id="gender" required>
-            <option value="">Select</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
+<div class="suggestions">
+    <div class="lifestyleSuggestions">
+        <h1>Lifestyle & Food Suggestions</h1>
+        <form id="userForm">
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+    
+            <label for="age">Age:</label>
+            <input type="number" id="age" min="0" max="120" required>
+    
+            <label for="height">Height (ft/in):</label>
+            <input type="text" id="height" placeholder="e.g., 5'8&quot;" required>
+    
+            <label for="weight">Weight (lbs):</label>
+            <input type="number" id="weight" min="0" required>
+    
+            <h3>Medical History:</h3>
+            <div>
+        
+            <div class="checkbox-group">
+                <input type="checkbox" id="alcoholDrugAbuse"></label>
+                <label for="alcoholDrugAbuse">Alcohol/Drug Abuse</label><br>
+    
+                <input type="checkbox" id="asthma"></label>
+                <label for="asthma">Asthma</label><br>
+    
+                <input type="checkbox" id="cancer">
+                <label for="cancer">Cancer</label><br>
+    
+                <input type="checkbox" id="diabetes">
+                <label for="diabetes">Diabetes</label><br>
+    
+                <input type="checkbox" id="heartDisease">
+                <label for="heartDisease">Heart Disease</label><br>
+    
+                <input type="checkbox" id="highBloodPressure">
+                <label for="highBloodPressure">High Blood Pressure</label><br>
+    
+                <input type="checkbox" id="highCholesterol">
+                <label for="highCholesterol">High Cholesterol</label><br>
+    
+                <input type="checkbox" id="thyroidDisease">
+                <label for="thyroidDisease">Thyroid Disease</label><br>
+    
+                <input type="checkbox" id="migraineHeadaches">
+                <label for="migraineHeadaches">Migraine Headaches</label><br>
+    
+                <input type="checkbox" id="stroke">
+                <label for="stroke">Stroke</label><br>
 
-        <label for="age">Age:</label>
-        <input type="number" id="age" min="0" max="120" required>
-
-        <label for="height">Height (ft/in):</label>
-        <input type="text" id="height" placeholder="e.g., 5'8&quot;" required>
-
-        <label for="weight">Weight (lbs):</label>
-        <input type="number" id="weight" min="0" required>
-
-        <h3>Medical History:</h3>
-        <div class="checkbox-group">
-            <input type="checkbox" id="alcoholDrugAbuse">
-            <label for="alcoholDrugAbuse">Alcohol/Drug Abuse</label><br>
-
-            <input type="checkbox" id="asthma">
-            <label for="asthma">Asthma</label><br>
-
-            <input type="checkbox" id="cancer">
-            <label for="cancer">Cancer</label><br>
-
-            <input type="checkbox" id="diabetes">
-            <label for="diabetes">Diabetes</label><br>
-
-            <input type="checkbox" id="heartDisease">
-            <label for="heartDisease">Heart Disease</label><br>
-
-            <input type="checkbox" id="highBloodPressure">
-            <label for="highBloodPressure">High Blood Pressure</label><br>
-
-            <input type="checkbox" id="highCholesterol">
-            <label for="highCholesterol">High Cholesterol</label><br>
-
-            <input type="checkbox" id="thyroidDisease">
-            <label for="thyroidDisease">Thyroid Disease</label><br>
-
-            <input type="checkbox" id="migraineHeadaches">
-            <label for="migraineHeadaches">Migraine Headaches</label><br>
-
-            <input type="checkbox" id="stroke">
-            <label for="stroke">Stroke</label>
-        </div>
-
-        <button type="button" onclick="generateSuggestions()">Get Suggestions</button>
-    </form>
-    <h2>Suggestions:</h2>
-
-    <div id="lifestyleSuggestions">
-        <p id="suggestion-text">Please fill out the form above to receive your suggestions.</p>
-      </div>
+               <!-- Centering the button -->
+<div style="text-align: center; margin-top: 20px;">
+    <button type="button" class="suggestion-button" onclick="generateSuggestions()">Get Suggestions</button>
 </div>
 
+
+                <h2>Suggestions:</h2>
+                <div id="suggestions">
+                    <p id="suggestion-text">Please fill out the form above to receive your suggestions.</p>
+                </div>
+    
 <section id="advisory" class="advisory-section">
     <div class="advisory-container">
-        <h1>Daily Health Recommendations</h2>
+        <h1>Daily Health Recommendations</h1>
         <p>Enter your age to see personalized health goals for staying healthy:</p>
         
         <label for="age-input">Enter your age:</label>
         <input type="number" id="age-input" min="1" max="120" placeholder="Your age" required>
         
-        <button type="button" id="get-advice">Get Recommendations</button>
+        <button type="button" id="get-advice" onclick="generateFoodRecommendations()">Get Recommendations</button>
 
-        <div id="recommendations" class="recommendations">
-            <!-- Personalized recommendations will appear here -->
+        <div id="recommendations" class="recommendations"></div>
+    </div>
+</section>
+
+<script>
+    function generateSuggestions() {
+        const age = document.getElementById("age").value;
+        const weight = document.getElementById("weight").value;
+        const diabetes = document.getElementById("diabetes").checked;
+        const highBloodPressure = document.getElementById("highBloodPressure").checked;
+        const highCholesterol = document.getElementById("highCholesterol").checked;
+
+        let suggestions = "Based on your information:<br>";
+
+        if (diabetes) {
+            suggestions += "- Focus on low-glycemic index foods like whole grains, leafy vegetables, and lean proteins.<br>";
+        }
+        if (highBloodPressure) {
+            suggestions += "- Avoid high-sodium foods; include potassium-rich foods like bananas, oranges, and spinach.<br>";
+        }
+        if (highCholesterol) {
+            suggestions += "- Incorporate foods with healthy fats like avocados, nuts, and fatty fish.<br>";
+        }
+        if (!diabetes && !highBloodPressure && !highCholesterol) {
+            suggestions += "- Maintain a balanced diet rich in fruits, vegetables, and whole foods.<br>";
+        }
+
+        document.getElementById("suggestion-text").innerHTML = suggestions;
+    }
+
+    function generateFoodRecommendations() {
+        const ageInput = document.getElementById("age-input").value;
+        let recommendations = "";
+
+        if (ageInput < 18) {
+            recommendations = "Focus on proper growth and development with a mix of protein, calcium, and vitamins.";
+        } else if (ageInput >= 18 && ageInput <= 50) {
+            recommendations = "Maintain energy levels with a balanced diet of whole grains, lean protein, and healthy fats.";
+        } else if (ageInput > 50) {
+            recommendations = "Incorporate fiber-rich foods and calcium to support digestion and bone health.";
+        }
+
+        document.getElementById("recommendations").innerHTML = recommendations;
+    }
+</script>
+
         </div>
     </div>
 </section>
@@ -298,4 +347,3 @@
     confirmationDiv.scrollIntoView({ behavior: "smooth" });
 });
 </script>
-
