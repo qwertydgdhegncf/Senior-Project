@@ -10,7 +10,7 @@ Diagnocare Central is an interactive and user-friendly web application designed 
 - [License](#license)
 
 
-1. ## Project Structure
+ ## Project Structure
 
 ### Description of Files
 - **`index.html`**: The main landing page for the website.
